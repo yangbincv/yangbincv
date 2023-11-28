@@ -1,85 +1,40 @@
-### Hi there 👋
 
-<!--
-**yangbincv/yangbincv** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
  <center>
-     <h1>Bin Yang (杨斌)</h1>
-     <div>
-         <span>
-             <img src="assets/phone-solid.svg" width="18px">
-             12345678912
-         </span>
-         ·
-         <span>
-             <img src="assets/envelope-solid.svg" width="18px">
-             zs123@126.com
-         </span>
-         ·
-         <span>
-             <img src="assets/github-brands.svg" width="18px">
-             <a href="https://github.com/bear01">GitHub</a>
-         </span>
-         ·
-         <span>
-             <img src="assets/rss-solid.svg" width="18px">
-             <a href="http://www.bear9596.com:8080/">My Blog</a>
-         </span>
-     </div>
+     <h1>Bin Yang (杨斌)👋</h1>
  </center>
- ## <img src="assets/info-circle-solid.svg" width="30px"> 个人信息 
 
- - 男，1996 年，重庆，中共党员
- - 求职意向：**岗位
 
-## <img src="assets/graduation-cap-solid.svg" width="30px"> 教育经历
+ - 男，1993 年，武汉大学计算机学院博士生
+ - 邮箱：yangbin_cv@whu.edu.cn
+ - github：https://github.com/yangbincv
+ - 研究方向：行人重识别
 
-- 硕士，清华大学，**专业，2018.09~至今.
-- 学士，北京大学，**专业，2014.09~2018.07.
-- 通过了 CET6 英语等级考试，计算机四级认证，软考中级认证(网络工程师).
+## 教育经历
 
-## <img src="assets/briefcase-solid.svg" width="30px"> 校外实习
+- 博士，武汉大学，计算机科学与技术专业，2020.09~至今.
 
-- **##公司，##部门，##岗位，2018.7~2018.11**
-  - **项目描述**：#####################################################
-  - **工作描述**：#####################################################
+## 研究成果
 
-## <img src="assets/project-diagram-solid.svg" width="35px">个人项目
+- **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", TIP, 2023 (A类期刊) 
+- **Bin Yang**; Jun Chen; Cuiqun Chen; Mang Ye,"Dual Consistency-Constrained Learning for Unsupervised Visible-Infrared Person Re-Identification", IEEE TIFS, 2023 (A类期刊)
+- **Bin Yang**; Jun Chen; Mang Ye, "Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification", ICCV, 2023 (A类会议)
+- **Bin Yang**; Mang Ye; Jun Chen; Zesen Wu, "Augmented Dual-Contrastive Aggregation Learning for Unsupervised Visible-Infrared Person Re-Identification", ACM MM, 2022 (A类会议)
+- **Bin Yang**; Jun Chen; Mang Ye, "Top-K Visual Tokens Transformer: Selecting Tokens for Visible-Infrared Person Re-Identification", ICASSP, 2023 (B类会议)
+- Xianzheng Ma; Hossein Rahmani; Zhipeng Fan; **Bin Yang**; Bin Yang; Jun Chen; Jun Liu,"REMOTE: Reinforced Motion Transformation Network for Semi-supervised 2D Pose Estimation in Videos", AAAI, 2022 (A类会议)
 
-- **项目一**：#########################################################
-- **项目二**：#########################################################
-- **项目二**：###########
-- **项目三**：#########################################################
 
-## <img src="assets/tools-solid.svg" width="30px"> 职场技能
+## 工程项目
 
-- 精通############################################################
-- 精通############################################################
-- 熟悉############################################################
-- 熟悉############################################################
-- 了解############################################################
-- 了解############################################################
+**无人货柜商品检测：项目负责人**
+- 制定训练与测试数据采集方案
+- 商品检测模型训练与部署
+  
+**多模态视频分析：项目负责人**
+- 设计视频分析系统总体框架
+- 建立数据管理规则和任务标签格式
+  
+**电力设备缺陷检测：项目负责人**
+- 制定训练与数据采集方案
+- 模型训练与部署
 
-## <img src="assets/9.png" width="30px"> 获奖情况
 
-- ###############################################################
-- ###############################################################
-- ###############################################################
-
-## <img src="assets/0.png" width="30px"> 自我评价
-
-- ###############################################################
-- ###############################################################
-
-> 感谢抽空阅读
