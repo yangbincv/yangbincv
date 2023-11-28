@@ -15,7 +15,7 @@
 
 ## 研究成果
 
-- **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", TIP, 2023 (A类期刊) 
+- **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", IEEE TIP, 2023 (A类期刊) 
 - **Bin Yang**; Jun Chen; Cuiqun Chen; Mang Ye,"Dual Consistency-Constrained Learning for Unsupervised Visible-Infrared Person Re-Identification", IEEE TIFS, 2023 (A类期刊)
 - **Bin Yang**; Jun Chen; Mang Ye, "Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification", ICCV, 2023 (A类会议)
 - **Bin Yang**; Mang Ye; Jun Chen; Zesen Wu, "Augmented Dual-Contrastive Aggregation Learning for Unsupervised Visible-Infrared Person Re-Identification", ACM MM, 2022 (A类会议)
