@@ -14,6 +14,8 @@
 - 博士，武汉大学，计算机科学与技术专业，2020.09~至今.
 
 ## 研究成果
+### 2024年
+- **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (A类会议)
 ### 2023年
 - **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", IEEE TIP, 2023 (A类期刊) 
 - **Bin Yang**; Jun Chen; Cuiqun Chen; Mang Ye,"Dual Consistency-Constrained Learning for Unsupervised Visible-Infrared Person Re-Identification", IEEE TIFS, 2023 (A类期刊)
