@@ -16,7 +16,7 @@
 
 ## 研究成果
 ### 2024年
-- Zhangyi Hu$<sup>\*</sup>$； **Bin Yang$^\*$**;  Mang Ye, "Empowering Visible-Infrared Person Re-Identification with Foundation Models", NIPS, 2024 (A类会议,共同一作)
+- Zhangyi Hu\*； **Bin Yang\***;  Mang Ye, "Empowering Visible-Infrared Person Re-Identification with Foundation Models", NIPS, 2024 (A类会议,共同一作)
 - **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (A类会议)
 ### 2023年
 - **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", IEEE TIP, 2023 (A类期刊) 
