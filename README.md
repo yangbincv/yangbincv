@@ -24,14 +24,14 @@
 ### 2024年
 - Xiao Wang, Lekai Liu, **Bin Yang\***, Mang Ye, Zheng Wang, Xin Xu\*, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2024 (A类会议,共同通信)
 - Zhangyi Hu\*； **Bin Yang\***;  Mang Ye, "Empowering Visible-Infrared Person Re-Identification with Foundation Models", NIPS, 2024 (A类会议,共同一作)
-- **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (A类会议)
+- **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (A类会议，一作)
 ### 2023年
-- **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", IEEE TIP, 2023 (A类期刊) 
-- **Bin Yang**; Jun Chen; Cuiqun Chen; Mang Ye,"Dual Consistency-Constrained Learning for Unsupervised Visible-Infrared Person Re-Identification", IEEE TIFS, 2023 (A类期刊)
-- **Bin Yang**; Jun Chen; Mang Ye, "Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification", ICCV, 2023 (A类会议)
-- **Bin Yang**; Jun Chen; Mang Ye, "Top-K Visual Tokens Transformer: Selecting Tokens for Visible-Infrared Person Re-Identification", ICASSP, 2023 (B类会议)
+- **Bin Yang**; Jun Chen; Xianzheng Ma; Mang Ye, "Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation", IEEE TIP, 2023 (A类期刊，一作) 
+- **Bin Yang**; Jun Chen; Cuiqun Chen; Mang Ye,"Dual Consistency-Constrained Learning for Unsupervised Visible-Infrared Person Re-Identification", IEEE TIFS, 2023 (A类期刊，一作)
+- **Bin Yang**; Jun Chen; Mang Ye, "Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification", ICCV, 2023 (A类会议，一作)
+- **Bin Yang**; Jun Chen; Mang Ye, "Top-K Visual Tokens Transformer: Selecting Tokens for Visible-Infrared Person Re-Identification", ICASSP, 2023 (B类会议，一作)
 ### 2022年
-- **Bin Yang**; Mang Ye; Jun Chen; Zesen Wu, "Augmented Dual-Contrastive Aggregation Learning for Unsupervised Visible-Infrared Person Re-Identification", ACM MM, 2022 (A类会议)
+- **Bin Yang**; Mang Ye; Jun Chen; Zesen Wu, "Augmented Dual-Contrastive Aggregation Learning for Unsupervised Visible-Infrared Person Re-Identification", ACM MM, 2022 (A类会议，一作)
 - Xianzheng Ma; Hossein Rahmani; Zhipeng Fan; **Bin Yang**; Bin Yang; Jun Chen; Jun Liu,"REMOTE: Reinforced Motion Transformation Network for Semi-supervised 2D Pose Estimation in Videos", AAAI, 2022 (A类会议)
 
 
