@@ -9,13 +9,20 @@
  - github：https://github.com/yangbincv
  - 研究方向：行人重识别
 ## 工作经历
-- 博士后，武汉大学，计算机科学与技术专业，2024.08~至今.
+- 博士后，武汉大学，智能科学与技术，2024.08~至今.
 ## 教育经历
 
 - 博士，武汉大学，计算机科学与技术专业，2020.09~2024.06.
 
+## 主持项目
+-湖北省尖端人才计划
+-中国博后面上项目
+-中国博后国家资助计划
+-武汉大学弘毅博后计划
+
 ## 研究成果
 ### 2024年
+- Xiao Wang, Lekai Liu, **Bin Yang\***, Mang Ye, Zheng Wang, Xin Xu\*, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2024 (A类会议,共同通信)
 - Zhangyi Hu\*； **Bin Yang\***;  Mang Ye, "Empowering Visible-Infrared Person Re-Identification with Foundation Models", NIPS, 2024 (A类会议,共同一作)
 - **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (A类会议)
 ### 2023年
