@@ -15,15 +15,21 @@
 - 博士，武汉大学，计算机科学与技术专业，2020.09~2024.06.
 
 ## 主持项目
-- 湖北省青年基金
+- 国家自然科学基金 青年项目C类
+- 湖北省创新人才项目
+- 湖北省自然科学基金青年B类
 - 湖北省尖端人才计划
 - 中国博后面上项目
 - 中国博后国家资助计划
 - 武汉大学弘毅博后计划
 
 ## 研究成果
+### 2025年
+- Zhongao Zhou, **Bin Yang**, Wenke Huang, Jun Chen, Mang Ye, "Unbiased Prototype Consistency Learning for Multi-Modal and Multi-Task Object Re-Identification", NIPS Spotlight, 2025 (A类会议,共同一作)
+- Haoyu Yao, **Bin Yang\***, Wenke Huang, Mang Ye, "Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings", ICCV, 2025 (A类会议,共同一作)
+- Xiao Wang, Lekai Liu, **Bin Yang\***, Mang Ye, Zheng Wang, Xin Xu\*, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2025 (A类会议,共同通信)
+- Wenwen He, Wenke Huang, **Bin Yang\***, ShuKan Liu, Mang Ye\*. "SPMC: Self-Purifying Federated Backdoor Defense via Margin Contribution".ICML, 2025 (A类会议,共同通信)
 ### 2024年
-- Xiao Wang, Lekai Liu, **Bin Yang\***, Mang Ye, Zheng Wang, Xin Xu\*, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2024 (A类会议,共同通信)
 - Zhangyi Hu\*； **Bin Yang\***;  Mang Ye, "Empowering Visible-Infrared Person Re-Identification with Foundation Models", NIPS, 2024 (A类会议,共同一作)
 - **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (A类会议，一作)
 ### 2023年
