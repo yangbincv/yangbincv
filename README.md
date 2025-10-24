@@ -31,7 +31,7 @@
 - Haoyu Yao, **Bin Yang**, Wenke Huang, Mang Ye, "Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings", ICCV, 2025 (**A类会议,共同一作**)
 - Xiao Wang, Lekai Liu, **Bin Yang**, Mang Ye, Zheng Wang, Xin Xu, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2025 (**A类会议,共同通信**)
 - Wenwen He, Wenke Huang, **Bin Yang**, ShuKan Liu, Mang Ye. "SPMC: Self-Purifying Federated Backdoor Defense via Margin Contribution".ICML, 2025 (**A类会议,共同通信**)
-- Xiaofen Wang, Bin Yang, Tao Wen, Zhen Han, Zheng Wang. "Image Deraining via Dual-level Contextual Information Associated Learning for Autonomous Driving", KBS (**SCI 一区，通信作者**)
+- Xiaofen Wang,** Bin Yang**, Tao Wen, Zhen Han, Zheng Wang. "Image Deraining via Dual-level Contextual Information Associated Learning for Autonomous Driving", KBS (**SCI 一区，通信作者**)
 ### 2024年
 - Zhangyi Hu； **Bin Yang**;  Mang Ye, "Empowering Visible-Infrared Person Re-Identification with Foundation Models", NIPS, 2024 (**A类会议,共同一作**)
 - **Bin Yang**; Jun Chen; Mang Ye, "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification", CVPR, 2024 (**A类会议，一作**)
