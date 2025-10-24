@@ -26,6 +26,7 @@
 
 ## 研究成果
 ### 2025年
+- PRCV 全模态行人重识别挑战赛一等奖 （**优秀指导老师**）
 - Zhongao Zhou, **Bin Yang**, Wenke Huang, Jun Chen, Mang Ye, "Unbiased Prototype Consistency Learning for Multi-Modal and Multi-Task Object Re-Identification", NIPS **Spotlight**, 2025 (**A类会议,共同一作**)
 - Haoyu Yao, **Bin Yang**, Wenke Huang, Mang Ye, "Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings", ICCV, 2025 (**A类会议,共同一作**)
 - Xiao Wang, Lekai Liu, **Bin Yang**, Mang Ye, Zheng Wang, Xin Xu, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2025 (**A类会议,共同通信**)
@@ -44,18 +45,5 @@
 - Xianzheng Ma; Hossein Rahmani; Zhipeng Fan; **Bin Yang**; Bin Yang; Jun Chen; Jun Liu,"REMOTE: Reinforced Motion Transformation Network for Semi-supervised 2D Pose Estimation in Videos", AAAI, 2022 (**A类会议**)
 
 
-## 工程项目
-
-**无人货柜商品检测：项目负责人**
-- 制定训练与测试数据采集方案
-- 商品检测模型训练与部署
-  
-**多模态视频分析：项目负责人**
-- 设计视频分析系统总体框架
-- 建立数据管理规则和任务标签格式
-  
-**电力设备缺陷检测：项目负责人**
-- 制定训练与数据采集方案
-- 模型训练与部署
 
 
