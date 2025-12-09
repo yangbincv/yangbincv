@@ -30,7 +30,6 @@
 - Cuiqun Chen, Qi Chen, **Bin Yang**, Xingyi Zhang, "UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization", AAAI, 2026 (**A类会议 Oral,共同通信**)
 - Qian Bie, Xiao Wang, **Bin Yang**, Zhixi Yu, Jun Chen, Xin Xu, "Robust Pedestrian Detection with Uncertain Modality", AAAI, 2026 (**A类会议,共同通信**)
 - Xiao Wang, Lekai Liu, **Bin Yang**, Mang Ye, Zheng Wang, Xin Xu, "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification", AAAI, 2026 (**A类会议,共同通信**)
-
 - PRCV 全模态行人重识别挑战赛一等奖 （**优秀指导老师**）
 - Zhongao Zhou, **Bin Yang**, Wenke Huang, Jun Chen, Mang Ye, "Unbiased Prototype Consistency Learning for Multi-Modal and Multi-Task Object Re-Identification", NIPS **Spotlight**, 2025 (**A类会议,共同一作**)
 - Haoyu Yao, **Bin Yang**, Wenke Huang, Mang Ye, "Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings", ICCV, 2025 (**A类会议,共同一作**)
