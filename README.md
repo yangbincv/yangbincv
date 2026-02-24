@@ -29,7 +29,7 @@
 - Yuxuan Zhao, **Bin Yang**, Zhongao Zhou, He Li, Jian Liang, Jun Chen, Bo Du†, Mang Ye†, "WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification", CVPR 2026 ( **CCF-A类会议，共同一作**)
 - Yudi Xie,**Bin Yang**, Zhongao Zhou, Zhenghan Chen, Mang Ye, "Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification", CVPR 2026 ( **CCF-A类会议，共同一作**)
 - Cuiqun Chen, Qi Chen, **Bin Yang**, Xingyi Zhang, "UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization", AAAI, 2026 (**CCF-A类会议 Oral,共同通信**)
-- Qian Bie, Xiao Wang, **Bin Yang**, Zhixi Yu, Jun Chen, Xin Xu, "Robust Pedestrian Detection with Uncertain Modality", AAAI, 2026 (**CCF-A类会议,共同通信**)****
+- Qian Bie, Xiao Wang, **Bin Yang**, Zhixi Yu, Jun Chen, Xin Xu, "Robust Pedestrian Detection with Uncertain Modality", AAAI, 2026 (**CCF-A类会议,共同通信**)
 
 
 ### 2025年
