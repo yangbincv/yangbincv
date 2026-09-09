@@ -30,6 +30,9 @@
 
 ## 研究成果
 ### 2026年
+- Wenjie Qian, **Bin Yang**, Xiao Wang, Wenke Huang, Ling Mei, Xin Xu, Mang Ye, "Cross-Resolution Semantic Transfer for Robust Text-to-Image Retrieval in Low-Resolution Surveillance", ACM MM 2026 ( **CCF-A类会议，Oral 共同一作**)
+- Tingfeng Wang, **Bin Yang**, Yang Bai, Shuai You, Mang Ye, Kehua Su, "Latent Modality Recovery and Topological Consistency for Robust Missing-Modality Person Re-identification", ACM MM 2026 ( **CCF-A类会议，共同一作**)
+- Changsheng Zheng,** Bin Yang**, Mang Ye, Qingxiong Tan, "PASTE-D2Net: Prior-Aware Spatio-Temporal Evolutionary Distillation Dual-Stream Network for Medical Single-Domain Generalization", ACM MM 2026 ( **CCF-A类会议，共同一作**)
 - Ziang Zhang, **Bin Yang**, Mang Ye, "Cross-Modal Semantic Decoupling and Transfer for Text-to-Visible-Infrared Person Re-Identification", ICML 2026 ( **CCF-A类会议，共同一作**)
 - Yuxuan Zhao,  Zhongao Zhou, **Bin Yang**, He Li, Jian Liang, Jun Chen, Bo Du†, Mang Ye†, "WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification", CVPR 2026 ( **CCF-A类会议 Highlight，共同通信**)
 - Yudi Xie,**Bin Yang**, Zhongao Zhou, Zhenghan Chen, Mang Ye, "Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification", CVPR 2026 ( **CCF-A类会议，共同一作**)
