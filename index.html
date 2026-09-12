@@ -1,944 +1,580 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Alex Morgan | Personal Homepage Template</title>
-  <meta name="author" content="Alex Morgan">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/svg+xml" href="images/template/avatar.svg">
+<html lang="zh-CN" data-page-node-id="GJoWKySA4DYQQ483wvhXbV">
+<head data-page-node-id="BXAuBP3Iulstp7w5P7rwhx">
+  <meta charset="UTF-8" data-page-node-id="E6iorqTJPQddgOBH0no9jn">
+  <title>Bin Yang (杨斌) | Personal Homepage</title>
+  <meta name="author" content="Bin Yang" data-page-node-id="w8KzEHjQPKMmXytDi1wbXy">
+  <meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="qdEFNy57UUTAf3KBCKJJSh">
+  <meta name="description" content="杨斌，武汉大学博士后。研究方向：多模态目标重识别、多模态医疗、社会模拟。" data-page-node-id="rzxsyZHUJKYe4ZHs00ozyH">
   <style>
-    body, * {
-      cursor: url('images/icon/cursor.png'), auto;
+    :root {
+      --accent: #a3541c;
+      --accent-soft: rgba(251, 165, 36, 0.08);
+      --text: #1f2430;
+      --muted: #5b6270;
+      --border: rgba(17, 17, 17, 0.14);
+      --highlight: #FFFEE0;
     }
-    a, a * {
-      cursor: url('images/icon/cursor-pointer.png'), pointer !important;
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+      color: var(--text);
+      background: #fafafa;
+      margin: 0;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 860px; margin: 0 auto; padding: 36px 20px 0; }
+    name { font-size: 1.7em; font-weight: 700; }
+    heading {
+      display: block;
+      font-size: 1.5em;
+      font-weight: 700;
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+      width: fit-content;
+    }
+    .section { margin: 40px 0 8px; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent); margin: 16px 0; }
+
+    /* About */
+    .about-grid { display: flex; gap: 24px; align-items: flex-start; }
+    .about-text { flex: 1.9; }
+    .about-photo { flex: 1; max-width: 240px; text-align: center; }
+    .about-photo img { width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+    .about-photo .caption { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+    .contact-links { margin-top: 4px; }
+    .contact-links a {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 10px; margin: 4px 6px 4px 0;
+      border: 1px solid var(--border); border-radius: 18px;
+      font-size: 13.5px; color: var(--text); background: #fff;
+      transition: all .15s;
+    }
+    .contact-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .contact-links svg { width: 15px; height: 15px; }
+    .research-tags { margin-top: 10px; }
+    .research-tags span {
+      display: inline-block; background: var(--accent-soft); color: #6e3519;
+      border-radius: 14px; padding: 2px 12px; font-size: 13px; margin: 2px 4px 2px 0;
+    }
+    .chip-label { color: var(--muted); font-size: 13.5px; margin-right: 6px; }
+
+    /* News */
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li { margin: 7px 0; padding-left: 4px; }
+    .news-date {
+      display: inline-block; min-width: 78px; text-align: center;
+      background: #eef1f6; color: #3a4150; border-radius: 6px;
+      font-size: 12.5px; font-weight: 600; padding: 1px 8px; margin-right: 8px;
+    }
+    .news-highlight { color: var(--accent); font-weight: 600; }
+
+    /* Publications */
+    .pub-note { color: var(--muted); font-size: 13.5px; margin: 0 0 4px; }
+    .hl-demo { background: var(--highlight); padding: 0 4px; }
+    .tag-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px auto 6px; justify-content: center; }
+    .tag-btn {
+      padding: 5px 14px; border-radius: 20px;
+      border: 1px solid var(--border); background: var(--accent-soft);
+      color: #6e3519; font-size: 13px; cursor: pointer; transition: all .2s;
+    }
+    .tag-btn:hover { border-color: rgba(17,17,17,.36); }
+    .tag-btn.active { background: var(--accent); color: #fff; border-color: rgba(17,17,17,.62); }
+    .tag-count {
+      display: inline-block; background: rgba(251,165,36,.16); color: #6e3519;
+      font-size: 11px; font-weight: bold; min-width: 18px; height: 18px; line-height: 18px;
+      border-radius: 50%; text-align: center; margin-left: 5px; vertical-align: middle;
+    }
+    .tag-btn.active .tag-count { background: rgba(255,255,255,.25); color: #fff; }
+    .pub {
+      background: #fff; border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 18px; margin: 12px 0;
+    }
+    .pub.first-author { background: var(--highlight); }
+    .pub-title { font-weight: 700; font-size: 15.5px; }
+    .pub-title a { color: var(--text); }
+    .pub-title a:hover { color: var(--accent); }
+    .pub-authors { font-size: 13.8px; color: #383f4d; margin-top: 3px; }
+    .pub-authors b { color: var(--accent); }
+    .pub-venue { margin-top: 6px; font-size: 13.5px; }
+    .badge {
+      display: inline-block; font-weight: 700; font-size: 12px;
+      border-radius: 5px; padding: 1px 8px; margin-right: 6px;
+      background: #3a4150; color: #fff;
+    }
+    .badge.award { background: #b02a2a; }
+    .badge.journal { background: #1f5f8b; }
+    .pub-desc { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+    .pub-links { font-size: 13px; margin-top: 4px; }
+
+    /* Experience */
+    .exp-item { display: flex; gap: 16px; margin: 12px 0; align-items: flex-start; }
+    .exp-badge {
+      flex: 0 0 96px; text-align: center; font-weight: 700; font-size: 13px;
+      background: var(--accent-soft); color: #6e3519; border-radius: 8px; padding: 10px 4px;
+    }
+    .exp-body b { font-size: 15px; }
+    .exp-meta { color: var(--muted); font-size: 13.5px; }
+
+    /* Grants */
+    .grant-list { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 32px; }
+    .grant-list li { margin: 6px 0; padding-left: 4px; break-inside: avoid; font-size: 14.5px; }
+    .grant-list li::before { content: "◈ "; color: var(--accent); }
+    @media (max-width: 640px) { .grant-list { column-count: 1; } }
+
+    /* Projects tag cloud */
+    #tagcloud-container { position: relative; width: 100%; height: 300px; overflow: hidden; }
+    .tagcloud-item {
+      position: absolute; white-space: nowrap; color: #444 !important;
+      font-weight: 600; text-decoration: none; will-change: transform, opacity;
+    }
+    .tagcloud-item:hover { color: var(--accent) !important; }
+
+    /* Service & Awards */
+    .plain-list { list-style: none; padding: 0; margin: 0; }
+    .plain-list li { margin: 7px 0; padding-left: 4px; }
+    .plain-list li::before { content: "✦ "; color: var(--accent); }
+
+    /* Footer */
+    .footer { margin-top: 56px; background: #22303f; color: #e8edf3; text-align: center; padding: 44px 20px 34px; }
+    .footer h2 { margin: 0 0 6px; font-size: 1.5em; }
+    .footer .sub { color: #aab7c4; margin: 0 0 18px; }
+    .footer .cta {
+      display: inline-block; background: var(--accent); color: #fff; font-weight: 600;
+      border-radius: 24px; padding: 9px 26px; transition: all .15s;
+    }
+    .footer .cta:hover { text-decoration: none; filter: brightness(1.1); }
+    .footer .footnote { margin-top: 22px; font-size: 12.5px; color: #8fa0b0; }
+
+    /* Back to top */
+    #backToTop {
+      position: fixed; right: 22px; bottom: 26px; width: 42px; height: 42px;
+      border-radius: 50%; border: 1px solid var(--border); background: #fff; color: var(--text);
+      cursor: pointer; opacity: 0; pointer-events: none; transition: all .25s;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12); display: flex; align-items: center; justify-content: center;
+    }
+    #backToTop.visible { opacity: 1; pointer-events: auto; }
+    #backToTop svg { width: 20px; height: 20px; }
+
+    /* Toast */
+    .toast-message {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,.92); color: #333; padding: 8px 16px;
+      border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      border: 1px solid var(--border); opacity: 0; transition: all .3s ease; pointer-events: none; z-index: 2000;
+    }
+    .toast-message.show { opacity: 1; transform: translateX(-50%) translateY(8px); }
+
+    @media (max-width: 640px) {
+      .about-grid { flex-direction: column-reverse; }
+      .about-photo { max-width: 200px; margin: 0 auto; }
     }
   </style>
 </head>
-<body>
-  <table id="about" class="page-section" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:68%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Alex Morgan &nbsp | &nbsp 艾利克斯<span id="astronaut-btn" style="cursor: pointer; margin-left: 5px;" title="Copy bio">🧑‍🚀</span></name>
-              </p>
-			<p>
-			  I am a fictional Ph.D. candidate at
-			  <img 
-			    src="images/template/institute.svg"
-			    alt="Northbridge Institute logo"
-			    style="height:1em; vertical-align:middle; margin-right:4px;"
-			  >
-			  <a href="#">Northbridge Institute of Technology</a>, supervised by Prof.
-			  <a href="#">Mira Chen</a>. My research explores human-centered AI, reliable multimodal systems, and accessible tools for scientific discovery.
-			</p>
-			<p>
-				I like collaborating with
-				<a href="https://github.com/anthropics/claude-code">
-				  <img src="images/icon/claudecode.png" alt="Claude Code icon" style="height:16px; vertical-align:middle;">
-				  Claude Code
-				</a>
-				and
-				<a href="https://github.com/openai/codex">
-				  <img src="images/icon/codex.png" alt="Codex icon" style="height:16px; vertical-align:middle;">
-				  CodeX
-				</a>
-				. They are my good partners! I enjoy turning ambitious ideas into simple, useful systems and sharing what I learn along the way.
-			</p>
-			<div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent); margin: 10px 0;"></div>
+<body data-page-node-id="L6uhsVQ3ld1rFj60OAtyn0">
+  <div class="container" id="about" data-page-node-id="m5pIrKNvxwL5vOQcz6RPIJ">
 
-              <p class="contact-links">
-                <span class="contact-line">
-                <a href="mailto:alex.morgan@example.com" id="email-copy" class="email-link" title="Click to copy email">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                    <path d="m3 7 9 6 9-6"></path>
-                  </svg>
-                  Email: <span class="contact-sub">alex.morgan@example.com</span>
-                </a> &nbsp/&nbsp
-                <a href="#" title="Replace with your CV">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path>
-                    <path d="M14 2v6h6"></path>
-                    <path d="M8 13h8"></path>
-                    <path d="M8 17h5"></path>
-                  </svg>
-                  CV
-                </a> &nbsp/&nbsp
-				<a href="#" title="Replace with your social profile">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.9 2.5h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H2l7.9-9L1.6 2.5h7l4.8 6.4 5.5-6.4Zm-1.2 18h1.9L7.6 4.4h-2l12.1 16.1Z"></path>
-                  </svg>
-                  Twitter
-                </a> &nbsp/&nbsp
-				<a href="#" title="Replace with your social profile">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-                    <path d="M8 9h8"></path>
-                    <path d="M8 13h8"></path>
-                    <path d="M8 17h5"></path>
-                  </svg>
-                  RedNote
-                </a>
-                </span>
-                <span class="contact-line">
-                <a href="#" title="Replace with your Scholar profile">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 3 1.5 9 12 15 22.5 9 12 3Z"></path>
-                    <path d="M5 12.1v4.2c0 1.2 3.1 3.2 7 3.2s7-2 7-3.2v-4.2l-7 4-7-4Z"></path>
-                  </svg>
-                  Google Scholar
-                </a>
-                &nbsp/&nbsp
-                <a href="#" title="Replace with your GitHub profile">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.5 2.7 3.2 1.9.1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.8.1 3.1.8.9 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.8C23.4 5.6 18.3.5 12 .5Z"></path>
-                  </svg>
-                  Github
-                </a>
-                </span>
-			  </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:85%;max-width:85%;border-radius:8px;" alt="Abstract placeholder portrait for a fictional person" src="images/template/avatar.svg">
-            </td>
-          </tr>
-        </tbody></table>
-
-			<table id="news" class="page-section" style="width:96%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-	          <tr>
-	              <heading>News</heading>
-	            <br>
-	            <td style="padding:0px;width:100%;vertical-align:middle">
-			  <P class="news-first-entry">
-                <li class="news-entry"><span class="news-date-badge">Jun. 2026</span> Our paper on interpretable multimodal agents was accepted by <span class="news-highlight">A fictional AI symposium</span>.
-                </li>
-              </P>
-			  <P>
-                <li class="news-entry"><span class="news-date-badge">Mar. 2026</span> I joined the <span class="news-highlight">Open Science Fellows</span> community.
-                </li>
-              </P>
-              <P>
-                <li class="news-entry"><span class="news-date-badge">Nov. 2025</span> We released a new <span class="news-highlight">educational AI toolkit</span> for public use.
-                </li>
-              </P>
-            </td>
-          </tr>
-        </tbody></table>
-        
-		<table id="publications" class="publications-table page-section" style="width:100%;border:0px;border-spacing:0 16px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <heading>Publications</heading>
-    <br>
-   <p>† Equal contribution. * Corresponding author. The leading papers are <span style="background-color: #FFFEE0;">highlighted</span>.</p>
-   <p>The entries below are fictional examples. Replace them with your publications and update your <a href="#">Google Scholar</a> link.</p>
-          
-          <!-- Research Interests Tag Filter -->
-          <style>
-            .tag-filter {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 8px;
-              margin: 16px auto 0;
-              justify-content: center;
-            }
-            .tag-btn {
-              padding: 5px 14px;
-              border-radius: 20px;
-              border: 1px solid rgba(17, 17, 17, 0.18);
-              background: rgba(251, 165, 36, 0.06);
-              color: #6e3519;
-              font-size: 13px;
-              cursor: pointer;
-              transition: all 0.2s;
-            }
-            .tag-btn:hover {
-              border-color: rgba(17, 17, 17, 0.36);
-              background: rgba(251, 165, 36, 0.1);
-              color: #6e3519;
-            }
-            .tag-btn.active {
-              background: #ad7020;
-              color: #fff;
-              border-color: rgba(17, 17, 17, 0.62);
-              box-shadow: 0 2px 8px rgba(173, 112, 32, 0.22);
-            }
-            .tag-count {
-              display: inline-block;
-              background: rgba(0,0,0,0.15);
-              color: inherit;
-              font-size: 11px;
-              font-weight: bold;
-              width: 18px;
-              height: 18px;
-              line-height: 18px;
-              border-radius: 50%;
-              text-align: center;
-              margin-left: 5px;
-              vertical-align: middle;
-            }
-            .tag-btn.active .tag-count {
-              background: rgba(255, 255, 255, 0.22);
-              color: #fff;
-            }
-            .tag-btn:not(.active) .tag-count {
-              background: rgba(251, 165, 36, 0.14);
-              color: #6e3519;
-            }
-            .publications-table tr[data-tags] > td {
-              border-top: 1px solid rgba(0, 0, 0, 0.14);
-              border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-              background: #fff;
-            }
-            .publications-table tr[data-tags] > td:first-child {
-              border-left: 1px solid rgba(0, 0, 0, 0.14);
-              border-radius: 8px 0 0 8px;
-            }
-            .publications-table tr[data-tags] > td:last-child {
-              border-right: 1px solid rgba(0, 0, 0, 0.14);
-              border-radius: 0 8px 8px 0;
-            }
-            .publications-table tr[data-tags][style*="lightyellow"] > td {
-              background: lightyellow;
-            }
-
-            /* 自定义复制提示框样式 */
-            .toast-message {
-              position: fixed;
-              top: var(--toast-y, 20px);
-              left: var(--toast-x, 50%);
-              transform: translate(-50%, -120%);
-              background: rgba(255, 255, 255, 0.8);
-              color: #333;
-              padding: 8px 16px;
-              border-radius: 20px;
-              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-              z-index: 2000;
-              opacity: 0;
-              transition: all 0.3s ease;
-              pointer-events: none;
-              border: 1px solid rgba(0,0,0,0.05);
-            }
-            .toast-message.show {
-              opacity: 1;
-              transform: translate(-50%, -135%);
-            }
-          </style>
-          
-          <div class="tag-filter" id="tagFilter">
-            <button class="tag-btn active" data-tag="all">All</button>
-	            <button class="tag-btn" data-tag="multimodal-gen">Generation</button>
-	            <button class="tag-btn" data-tag="mllm">Multimodal</button>
-	            <button class="tag-btn" data-tag="medical">Medical</button>
-	            <button class="tag-btn" data-tag="world-model">World Model</button>
-            <button class="tag-btn" data-tag="benchmark">Benchmark</button>
-          </div>
-
-          <script>
-            // Inject counts into tag buttons (after full DOM is parsed)
-            document.addEventListener('DOMContentLoaded', function() {
-              const rows = document.querySelectorAll('tr[data-tags]');
-              const total = rows.length;
-              document.querySelectorAll('.tag-btn').forEach(function(btn) {
-                const tag = btn.dataset.tag;
-                const count = tag === 'all' ? total : Array.from(rows).filter(r => r.dataset.tags.split(',').includes(tag)).length;
-                btn.insertAdjacentHTML('beforeend', '<span class="tag-count">' + count + '</span>');
-              });
-            });
-
-            // Tag filter
-            document.getElementById('tagFilter').addEventListener('click', function(e) {
-              const btn = e.target.closest('.tag-btn');
-              if (!btn) return;
-              document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-              btn.classList.add('active');
-              const tag = btn.dataset.tag;
-              document.querySelectorAll('tr[data-tags]').forEach(function(row) {
-                row.style.display = (tag === 'all' || row.dataset.tags.split(',').includes(tag)) ? '' : 'none';
-              });
-            });
-
-            function copyText(text, event) {
-              const showToast = () => {
-                const toast = document.getElementById('toast');
-                if (event) {
-                  const margin = 12;
-                  const x = Math.min(Math.max(event.clientX, margin), window.innerWidth - margin);
-                  const y = Math.min(Math.max(event.clientY, 48), window.innerHeight - margin);
-                  toast.style.setProperty('--toast-x', x + 'px');
-                  toast.style.setProperty('--toast-y', y + 'px');
-                }
-                toast.classList.add('show');
-                setTimeout(() => {
-                  toast.classList.remove('show');
-                }, 2000);
-              };
-
-              navigator.clipboard.writeText(text).then(function() {
-                showToast();
-              }).catch(function(err) {
-                console.error('无法复制: ', err);
-                // 降级方案
-                const textArea = document.createElement("textarea");
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                  document.execCommand('copy');
-                  showToast();
-                } catch (err) {
-                  console.error('降级复制失败: ', err);
-                }
-                document.body.removeChild(textArea);
-              });
-            }
-
-            // 复制简介功能
-            document.getElementById('astronaut-btn').addEventListener('click', function(e) {
-              const text = "Alex Morgan is a fictional Ph.D. candidate at Northbridge Institute of Technology. Their research explores human-centered AI, reliable multimodal systems, and accessible tools for scientific discovery. This profile is sample content for a reusable personal homepage template.";
-              copyText(text, e);
-            });
-
-            document.getElementById('email-copy').addEventListener('click', function(e) {
-              e.preventDefault();
-              copyText('alex.morgan@example.com', e);
-            });
-            
-          </script>
-
-	          <tr data-tags="medical">
-	            <td style="padding:20px;width:30%;vertical-align:middle">
-	              <div class="one">
-	                <div class="two" id="rarelens_image">
-	                  <br>
-	                  <img src="images/paper/rarelens.png" width="190" alt="RareLens clinical workflow">
-	                </div>
-	                <br>
-	                <img src="images/paper/rarelens.png" width="190" alt="RareLens clinical workflow">
-	                <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/geteff1/RareLens?style=flat-square&color=yellow&label=stars&logo=GitHub">
-	              </div>
-	              <script type="text/javascript">
-	                function rarelens_start() {
-	                  document.getElementById('rarelens_image').style.opacity = "1";
-	                }
-	                function rarelens_stop() {
-	                  document.getElementById('rarelens_image').style.opacity = "0";
-	                }
-	                rarelens_stop()
-	              </script>
-	            </td>
-	            <td style="padding:20px;width:70%;vertical-align:middle">
-					<a href="https://arxiv.org/pdf/2607.23290">
-	              <papertitle>OpenLens: Interpretable Multimodal Assistants for Community Science</papertitle>
-					</a>
-	              <br>
-	              <a:focus>Xi Chen</a:focus>,
-	              <a:focus>Hongru Zhou</a:focus>,
-	              <a:focus>Shiyu Feng</a:focus>,
-	              <a:focus>Hanyu Zhou</a:focus>,
-	              <a:focus>Huahui Yi</a:focus>,
-	              <a:focus><strong>Alex Morgan</strong></a:focus>,
-	              <a:focus>Tiancheng He</a:focus>,
-	              <a:focus>Kun Wang</a:focus>,
-	              <a:focus>Pingping Liu</a:focus>,
-	              <a:focus>Qiankun Li</a:focus>,
-	              <a:focus>Sicheng Lin</a:focus>,
-	              <a:focus>Huiying Ou</a:focus>,
-	              <a:focus>Xiaohong Zheng</a:focus>,
-	              <a:focus>Tianying Zang</a:focus>,
-	              <a:focus>Zhuohang Wu</a:focus>,
-	              <a:focus>Leheng Jiang</a:focus>,
-	              <a:focus>Kexin Cao</a:focus>,
-	              <a:focus>Wenhan Zhang</a:focus>,
-	              <a:focus>ChengYi Li</a:focus>,
-	              <a:focus>Zhiyang Wang</a:focus>,
-	              <a:focus>Songlin Li</a:focus>,
-	              <a:focus>Benyou Wang</a:focus>,
-	              <a:focus>Ningbei Yin</a:focus>,
-	              <a:focus>Shaoting Zhang</a:focus>,
-	              <a:focus>Weili Fu*</a:focus>,
-	              <a:focus>Jian Li*</a:focus>,
-	              <a:focus>Kang Li*</a:focus>
-	              <br>
-	              <a href="http://rarelens.org/">Homepage</a>
-	              /
-	              <a href="https://eval.rarelens.org/">Human Evaluation</a>
-	              /
-	              <a href="https://github.com/geteff1/RareLens">Code</a>
-				  /
-              	  <a href="https://arxiv.org/abs/2607.23290">Paper</a>
-	              <br>
-	              <em><strong>Preprint</strong></em>
-	              <p></p>
-	              <p>
-	              RareLens provides trustworthy, actionable decision support across the full rare-disease care pathway, from early risk screening and diagnosis to treatment, efficacy evaluation, and prognosis.
-	            </td>
-	          </tr>
-
-	          <tr data-tags="benchmark">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='gamecraft_image'>
-                  <br>
-                  <img src='images/paper/gamecraft-bench.png' width="190"></div>
-                  <br>
-                  <img src='images/paper/gamecraft-bench.png' width="190">
-                  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FreedomIntelligence/gamecraft-bench?style=flat-square&color=yellow&label=stars&logo=GitHub">
-                </div>
-              <script type="text/javascript">
-                function gamecraft_start() {
-                  document.getElementById('gamecraft_image').style.opacity = "1";
-                }
-                function gamecraft_stop() {
-                  document.getElementById('gamecraft_image').style.opacity = "0";
-                }
-                gamecraft_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2606.17861">
-                <papertitle>StudioBench: Evaluating Creative Agents in Interactive Environments</papertitle>
-              </a>
-              <br>
-              <a:focus>Tongxu Luo†</a:focus>,
-              <a:focus><strong>Alex Morgan†</strong></a:focus>,
-              <a:focus>Jiaxi Bi†</a:focus>,
-              <a:focus>Chenming Xu†</a:focus>,
-              <a:focus>Zhengyang Tang†</a:focus>,
-              <a:focus>Jianlong Chen</a:focus>,
-              <a:focus>Juhao Liang</a:focus>,
-              <a:focus>Ke Ji</a:focus>,
-              <a:focus>Shuqi Guo</a:focus>,
-              <a:focus>Yuhao Du</a:focus>,
-              <a:focus>Fan Bu</a:focus>,
-              <a:focus>Wenyu Du</a:focus>,
-              <a:focus>Xiaotong Zhang</a:focus>,
-              <a:focus>Kyle Li</a:focus>,
-              <a:focus>Shaobo Wang</a:focus>,
-              <a:focus>Linfeng Zhang</a:focus>,
-              <a:focus>Yuxuan Liu</a:focus>,
-              <a:focus>Xin Lai</a:focus>,
-              <a:focus>Chenxin Li</a:focus>,
-              <a:focus>Yiduo Guo</a:focus>,
-              <a:focus>Zhexin Zhang</a:focus>,
-              <a:focus>Xinyuan Wang</a:focus>,
-              <a:focus>Tianyi Bai</a:focus>,
-              <a:focus>Ziniu Li</a:focus>,
-              <a:focus>Benyou Wang*</a:focus>
-              <br>
-              <a href="https://tongxuluo.github.io/gamecraft-bench-website/">Homepage</a>&nbsp;/&nbsp;<a href="https://github.com/FreedomIntelligence/gamecraft-bench">Code</a>&nbsp;/&nbsp;<a href="https://arxiv.org/abs/2606.17861">Paper</a>
-              <br>
-              <em><strong>Preprint</strong></em>
-              <p></p>
-              <p>
-              GameCraft-Bench evaluates whether agents can build playable games end-to-end in a real game engine.
-              </td>
-          </tr>
-
-		<tr style="background-color: lightyellow;" data-tags="world-model">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='malle_image'>
-                  <br>
-                  <img src='images/paper/microverse.png' width="160"></div>
-                  <br>
-                  <img src='images/paper/microverse.png' width="160">
-                  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FreedomIntelligence/MicroVerse?style=flat-square&color=yellow&label=stars&logo=GitHub">
-                </div>
-              <script type="text/javascript">
-                function malle_start() {
-                  document.getElementById('malle_image').style.opacity = "1";
-                }
-                function malle_stop() {
-                  document.getElementById('malle_image').style.opacity = "0";
-                }
-                malle_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2603.00585">
-                <papertitle>TinyWorlds: Learning Robust Policies in Compact Simulated Environments</papertitle>
-              </a>
-              <br>
-              <a:focus><strong>Alex Morgan†</strong></a:focus>,
-              <a:focus>Minghao Wu†</a:focus>,
-              <a:focus>Hongru Zhou</a:focus>,
-              <a:focus>Zhihan Yu</a:focus>,
-              <a:focus>Zhenyang Cai</a:focus>,
-			  <a:focus>Junying Chen</a:focus>,
-              <a:focus>Benyou Wang*</a:focus>
-              <br>
-              <a href="https://github.com/FreedomIntelligence/MicroVerse">Code</a>
-              /
-              <a href="https://arxiv.org/abs/2603.00585">Paper</a>
-              <br>
-			  <span style="color: red;"><em><strong>ICLR 2026 (Poster)</strong></em></span>
-              <p></p>
-              <p>
-              MicroVerse is a world model designed to faithfully simulate biological processes at the microscale.
-              </td>
-          </tr>
-                    
-	          <tr style="background-color: lightyellow;" data-tags="multimodal-gen,medical">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='malle_image'>
-                  <br>
-                  <img src='images/paper/medgen.png' width="160"></div>
-                  <br>
-                  <img src='images/paper/medgen.png' width="160">
-                  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FreedomIntelligence/MedGen?style=flat-square&color=yellow&label=stars&logo=GitHub">
-                </div>
-              <script type="text/javascript">
-                function malle_start() {
-                  document.getElementById('malle_image').style.opacity = "1";
-                }
-                function malle_stop() {
-                  document.getElementById('malle_image').style.opacity = "0";
-                }
-                malle_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2507.05675">
-                <papertitle>FrameWeaver: Controllable Video Generation with Structured Annotations</papertitle>
-              </a>
-              <br>
-              <a:focus><strong>Alex Morgan†</strong></a:focus>,
-              <a:focus>Junying Chen†</a:focus>,
-              <a:focus>Ke Ji</a:focus>,
-              <a:focus>Zhenyang Cai</a:focus>,
-              <a:focus>Shunian Chen</a:focus>,
-              <a:focus>Benyou Wang*</a:focus>
-              <br>
-              <a href="https://github.com/FreedomIntelligence/MedGen">Code</a>
-              /
-              <a href="https://arxiv.org/abs/2507.05675">Paper</a>
-              /
-              <a href="https://huggingface.co/datasets/FreedomIntelligence/MedVideoCap-55K">Dataset</a>
-			  /
-              <a href="https://huggingface.co/FreedomIntelligence/MedGen-14B">Model</a>
-              <br>
-              <em><strong>Preprint</strong></em>
-              <p></p>
-              <p>
-              MedGen is a medical video generation model, built on the large-scale, caption-rich MedVideoCap-55K dataset.
-              </td>
-          </tr>
-
-	          <tr data-tags="mllm,medical">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='malle_image'>
-                  <br>
-                  <img src='images/paper/med-mat.png' width="190"></div>
-                  <br>
-                  <img src='images/paper/med-mat.png' width="190">
-                  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/FreedomIntelligence/Med-MAT?style=flat-square&color=yellow&label=stars&logo=GitHub">
-                </div>
-              <script type="text/javascript">
-                function malle_start() {
-                  document.getElementById('malle_image').style.opacity = "1";
-                }
-                function malle_stop() {
-                  document.getElementById('malle_image').style.opacity = "0";
-                }
-                malle_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://aclanthology.org/2025.acl-long.639.pdf">
-                <papertitle>Compositional Generalization in Multimodal Scientific Reasoning</papertitle>
-              </a>
-              <br>
-              <a:focus>Zhenyang Cai†</a:focus>,
-              <a:focus>Junying Chen†</a:focus>,
-              <a:focus><strong>Alex Morgan†</strong></a:focus>,
-              <a:focus>Weilong Wang</a:focus>,
-              <a:focus>Yonglin Deng</a:focus>,
-              <a:focus>Dingjie Song</a:focus>,
-              <a:focus>Yize Chen</a:focus>,
-              <a:focus>Zixu Zhang</a:focus>,
-              <a:focus>Benyou Wang*</a:focus>
-              <br>
-              <a href="https://github.com/FreedomIntelligence/Med-MAT">Code</a>
-              /
-              <a href="https://aclanthology.org/2025.acl-long.639.pdf">Paper</a>
-              /
-              <a href="https://huggingface.co/datasets/FreedomIntelligence/Med-MAT">Dataset</a>
-              <br>
-              <span style="color: red;"><em><strong>ACL 2025 (Main)</strong></em></span>
-              <p></p>
-              <p>
-              Multimodal LLMs achieve strong generalization in medical imaging largely through compositional generalization (CG).
-              </td>
-          </tr>
-
-
-	        </tbody></table>
-	        <script>
-	          (function() {
-	            var rows = document.querySelectorAll('.publications-table tr[data-tags]');
-
-	            rows.forEach(function(row, index) {
-	              var title = row.querySelector('papertitle');
-	              if (!title) return;
-
-	              var titleContainer = title.closest('a') || title;
-	              var firstBreak = titleContainer.nextElementSibling;
-	              if (!firstBreak || firstBreak.tagName !== 'BR') return;
-
-	              var lastBreak = firstBreak.nextElementSibling;
-	              while (lastBreak && lastBreak.tagName !== 'BR') {
-	                lastBreak = lastBreak.nextElementSibling;
-	              }
-	              if (!lastBreak) return;
-
-	              var authorNodes = [];
-	              var node = firstBreak.nextSibling;
-	              while (node && node !== lastBreak) {
-	                authorNodes.push(node);
-	                node = node.nextSibling;
-	              }
-
-	              var shell = document.createElement('div');
-	              shell.className = 'publication-authors-shell';
-	              var authors = document.createElement('div');
-	              authors.className = 'publication-authors';
-	              authors.id = 'publication-authors-' + index;
-	              authorNodes.forEach(function(authorNode) {
-	                authors.appendChild(authorNode);
-	              });
-
-	              var toggle = document.createElement('button');
-	              toggle.type = 'button';
-	              toggle.className = 'publication-authors-toggle';
-	              toggle.textContent = '▶';
-	              toggle.setAttribute('aria-controls', authors.id);
-	              toggle.setAttribute('aria-expanded', 'false');
-	              toggle.setAttribute('aria-label', 'Expand author list');
-	              toggle.title = 'Expand author list';
-
-	              shell.appendChild(authors);
-	              shell.appendChild(toggle);
-	              firstBreak.parentNode.insertBefore(shell, firstBreak);
-	              firstBreak.remove();
-	              lastBreak.remove();
-
-	              toggle.addEventListener('click', function() {
-	                var expanded = shell.classList.toggle('expanded');
-	                toggle.textContent = expanded ? '▼' : '▶';
-	                toggle.setAttribute('aria-expanded', String(expanded));
-	                toggle.setAttribute('aria-label', expanded ? 'Collapse author list' : 'Expand author list');
-	                toggle.title = expanded ? 'Collapse author list' : 'Expand author list';
-	              });
-	            });
-
-	            function updateAuthorToggles() {
-	              document.querySelectorAll('.publication-authors-shell').forEach(function(shell) {
-	                var authors = shell.querySelector('.publication-authors');
-	                var toggle = shell.querySelector('.publication-authors-toggle');
-	                var wasExpanded = shell.classList.contains('expanded');
-	                if (wasExpanded) shell.classList.remove('expanded');
-	                var hasOverflow = authors.scrollHeight > authors.clientHeight + 1;
-	                if (wasExpanded) shell.classList.add('expanded');
-	                toggle.hidden = !hasOverflow;
-	              });
-	            }
-
-	            updateAuthorToggles();
-
-	            // The publication cards are template examples, so their visible author lists
-	            // and destinations intentionally do not identify real people or projects.
-	            var sampleAuthors = [
-	              '<strong>Alex Morgan</strong>, Jamie Park, Noor Patel, Mira Chen*',
-	              '<strong>Alex Morgan†</strong>, Sam Rivera†, Taylor Kim, Mira Chen*',
-	              '<strong>Alex Morgan†</strong>, Jordan Lee†, Casey Wu, Mira Chen*',
-	              '<strong>Alex Morgan†</strong>, Robin Shah†, Dana Brooks, Mira Chen*',
-	              'Jamie Park†, <strong>Alex Morgan†</strong>, Noor Patel, Mira Chen*'
-	            ];
-	            document.querySelectorAll('.publication-authors').forEach(function(authors, index) {
-	              authors.innerHTML = sampleAuthors[index] || sampleAuthors[0];
-	            });
-	            rows.forEach(function(row) {
-	              row.querySelectorAll('a').forEach(function(link) {
-	                link.href = '#';
-	                link.removeAttribute('target');
-	              });
-	              row.querySelectorAll('img[src*="shields.io"]').forEach(function(badge) {
-	                badge.remove();
-	              });
-	            });
-
-	            var resizeFrame;
-	            window.addEventListener('resize', function() {
-	              cancelAnimationFrame(resizeFrame);
-	              resizeFrame = requestAnimationFrame(updateAuthorToggles);
-	            }, { passive: true });
-	          })();
-	        </script>
-
-	        <table id="experience" class="page-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
-          <br>
-              <heading>Experience</heading>
-          <br>
-          <tr>
-            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/template/institute.svg" width="100" alt="Fictional institute logo"></td>
-            <td width="90%" valign="center">
-              <strong>Northbridge Institute of Technology</strong>
-              <br> 2024.09 - Present
-              <br> <strong>Ph.D. Candidate</strong>
-              <br> Research Advisor: Prof. <a href="#">Mira Chen</a>
-            </td>
-          </tr>  
-        </tbody></table>
-
-        <table id="projects" class="page-section" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <br>
-              <heading>Projects</heading>
-              <br>
-              <p>🚀 Build in Open. Grow Together.</p>
-              <td style="padding:0px;width:100%;vertical-align:middle">
-                <div id="tagcloud-container">
-                    <p style="text-align:center; color:#999; padding-top: 180px;">Loading projects...</p>
-                </div>
-              </td>
-            </tr>
-        </tbody></table>
-
-        <script>
-            (function() {
-                const container = document.getElementById('tagcloud-container');
-                // Custom project list
-                const myProjects = [
-                    { name: "OpenLens", html_url: "#", stargazers_count: 128 },
-                    { name: "StudioBench", html_url: "#", stargazers_count: 94 },
-                    { name: "TinyWorlds", html_url: "#", stargazers_count: 76 },
-                    { name: "FrameWeaver", html_url: "#", stargazers_count: 63 },
-                    { name: "FieldNotes AI", html_url: "#", stargazers_count: 51 },
-                    { name: "SignalGarden", html_url: "#", stargazers_count: 42 },
-                    { name: "AtlasKit", html_url: "#", stargazers_count: 37 },
-                    { name: "ClearView", html_url: "#", stargazers_count: 29 }
-                ];
-
-                function initTagCloud(projects) {
-                    container.innerHTML = '';
-                    const tags = [];
-                    // Base radius for calculations (height-based to keep it fitting)
-                    const r = Math.min(container.offsetWidth, container.offsetHeight) / 2 * 0.8;
-                    // X-stretch factor for ellipsoid shape
-                    const stretchX = 1.5;
-                    
-                    projects.forEach(p => {
-                        const el = document.createElement('a');
-                        el.href = p.html_url;
-                        el.target = '_blank';
-                        el.className = 'tagcloud-item';
-                        // Show name and stars
-                        el.innerHTML = `${p.name} <span style="font-size:0.8em; opacity:0.8">🌟${p.stargazers_count}</span>`;
-                        el.style.color = '#444';
-                        
-                        container.appendChild(el);
-                        tags.push({ el: el, x: 0, y: 0, z: 0 });
-                    });
-
-                    let angleX = 0.001;
-                    let angleY = 0.001;
-                    let isHovering = false;
-                    const cx = container.offsetWidth / 2;
-                    const cy = container.offsetHeight / 2;
-
-                    // Initial positions - Golden Spiral distribution on sphere
-                    const len = tags.length;
-                    for(let i=0; i<len; i++) {
-                        const phi = Math.acos(-1 + (2 * i + 1) / len);
-                        const theta = Math.sqrt(len * Math.PI) * phi;
-                        tags[i].x = r * Math.cos(theta) * Math.sin(phi);
-                        tags[i].y = r * Math.sin(theta) * Math.sin(phi);
-                        tags[i].z = r * Math.cos(phi);
-                    }
-
-                    let animationId = null;
-                    let isVisible = true;
-
-                    function rotate() {
-                        animationId = null;
-                        if (!isVisible) return;
-                        if (!isHovering) {
-                            const cosX = Math.cos(angleX);
-                            const sinX = Math.sin(angleX);
-                            const cosY = Math.cos(angleY);
-                            const sinY = Math.sin(angleY);
-
-                            tags.forEach(tag => {
-                                // Rotate around X-axis
-                                let y = tag.y * cosX - tag.z * sinX;
-                                let z = tag.z * cosX + tag.y * sinX;
-                                tag.y = y;
-                                tag.z = z;
-
-                                // Rotate around Y-axis
-                                let x = tag.x * cosY - tag.z * sinY;
-                                z = tag.z * cosY + tag.x * sinY;
-                                tag.x = x;
-                                tag.z = z;
-                            });
-                        }
-
-                        tags.forEach(tag => {
-                            const perspective = 2 * r;
-                            const scale = perspective / (perspective - tag.z);
-                            const alpha = (tag.z + r) / (2 * r);
-                            
-                            // Apply stretchX here to create ellipsoid shape visually
-                            tag.el.style.left = (cx + tag.x * stretchX) - tag.el.offsetWidth / 2 + 'px';
-                            tag.el.style.top = (cy + tag.y) - tag.el.offsetHeight / 2 + 'px';
-                            tag.el.style.transform = `scale(${scale})`;
-                            tag.el.style.opacity = Math.max(0.2, alpha);
-                            tag.el.style.zIndex = Math.round(scale * 100);
-                        });
-                        animationId = requestAnimationFrame(rotate);
-                    }
-
-                    function setVisible(visible) {
-                        isVisible = visible;
-                        if (visible && animationId === null) {
-                            animationId = requestAnimationFrame(rotate);
-                        }
-                    }
-                    
-                    container.addEventListener('mouseenter', () => {
-                        isHovering = true;
-                    });
-                    
-                    container.addEventListener('mouseleave', () => {
-                        isHovering = false;
-                    });
-
-                    angleX = 0.002;
-                    angleY = 0.002;
-                    if ('IntersectionObserver' in window) {
-                        const observer = new IntersectionObserver(entries => {
-                            setVisible(entries[0].isIntersecting);
-                        }, { rootMargin: '120px' });
-                        observer.observe(container);
-                    }
-                    setVisible(true);
-                }
-
-                function loadProjects() {
-                    initTagCloud(myProjects);
-                }
-
-                loadProjects();
-            })();
-        </script>
-
-        <table id="service" class="page-section" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <br>
-            <heading>Service and Teaching</heading>
-            <br><br>
-          <td style="padding:0px;width:100%;vertical-align:middle">
-            <p>
-              <li>Volunteer Reviewer: Example Conference on Responsible AI, 2026</li>
-              <li>Teaching Assistant: Introduction to Machine Learning, Spring 2025</li>
-            </p>
-          </td>
-        </tr>
-        </tbody></table>
-
-        <table id="awards" class="page-section" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-                <br>
-                <heading>Awards and Honors</heading>
-                <br>
-                <br>
-              <td style="padding:0px;width:100%;vertical-align:middle">
-                <p>
-                  <li>2025: Northbridge Graduate Research Fellowship</li>
-                </p>
-				<p>
-                  <li>2024: Community Choice Award, Open Tools Showcase</li>
-                </p>
-                <p>
-                  <li>2023: Outstanding Student Mentor, City Code Club</li>
-                </p>
-              </td>
-            </tr>
-        </tbody></table>
-
-      </td>
-    </tr>
-  </table>
-
-  <section class="mountain-footer" aria-label="Footer landscape">
-    <div class="mountain-stage">
-      <picture>
-        <source type="image/webp" srcset="images/experience/background-960.webp 960w, images/experience/background-1440.webp 1440w, images/experience/background-1920.webp 1920w" sizes="100vw">
-        <img class="mountain-img" src="images/experience/background.jpeg" alt="Snowy mountain landscape" loading="lazy" decoding="async" fetchpriority="low"
-             onerror="this.style.display='none'; this.closest('picture').nextElementSibling.style.display='block';">
-      </picture>
-      <div class="mountain-fallback" style="display:none;"></div>
-      <div class="mountain-content">
-        <h2>Keep Exploring</h2>
-        <p class="mountain-sub">Do what matters, even when it's hard.</p>
-        <a href="mailto:alex.morgan@example.com" class="mountain-cta">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          <span>Get in Touch</span>
-        </a>
-        <p class="mountain-footnote">
-          <span>Alex Morgan | Fictional template profile</span>
-          <span class="mountain-updated">Last updated: <!-- LAST_UPDATED_START -->July 30, 2026<!-- LAST_UPDATED_END -->.</span>
-          <span class="mountain-template">
-            This is a reusable personal homepage template. Replace the fictional sample content with your own.
-          </span>
-        </p>
+    <table class="section" style="width:100%;border:0;border-spacing:0" data-page-node-id="uMU4cB6YSzP37axgQ83PxN"><tbody data-page-node-id="jxdpWpFrFPeRlkI7ocFqwA"><tr data-page-node-id="GistfBwirMGJJM79BFhMsF"><td data-page-node-id="WvA68DV3v6EBDxHvslnoa3">
+      <div class="about-grid" data-page-node-id="YVGnJ33Jme4ipJ1JHeyaSo">
+        <div class="about-text" data-page-node-id="FLqDSISQwHrFFSZCJyn5oq">
+          <p style="text-align:left;margin:0 0 6px" data-page-node-id="kmUNbgR5arhOh8lXirfVyV">
+            <name data-page-node-id="2U4wS7nbnar9iK1VVAbYFk">Bin Yang (杨斌)</name>
+            <span id="astronaut-btn" style="cursor:pointer;margin-left:6px" title="复制个人简介" data-page-node-id="a1EqFbABNgAEhEItHyQgpl">🧑‍🚀</span>
+          </p>
+          <p style="margin:6px 0" data-page-node-id="PCVfHxGGauj1uy7IXlDX4I">
+            我是一名武汉大学计算机学院出身的博士后研究人员，现于武汉大学
+            <b data-page-node-id="uJi3Q8jZhRR7esGaQuZf3S">智能科学与技术</b>专业从事博士后研究（2024.08 至今），师从Bo Du, Mang Ye 教授。
+            我的研究聚焦于<b data-page-node-id="tPS4NSWBh4w9IRCm1AI8wf">多模态目标重识别</b>、<b data-page-node-id="5QAQlhpPQUw84W7c6srTPs">多模态医疗</b>与<b data-page-node-id="ZfiMt9lnfYEtOkrp5hgNeY">社会模拟</b>，
+            致力于让跨模态感知系统在真实复杂场景中更加可靠。
+          </p>
+          <p class="research-tags" data-page-node-id="t98vGOYvbNSS4mJFnomNem">
+            <span class="chip-label" data-page-node-id="bOoj8vHi4wYlwpTypTEFA4">研究方向:</span>
+            <span data-page-node-id="OLVH717FHM2L8CBNx6jy7O">多模态目标重识别</span>
+            <span data-page-node-id="pup6rXj1rbBBgAmkyARwQT">多模态医疗</span>
+            <span data-page-node-id="gyUbpLLRg2MOwrRqtI6pjR">社会模拟</span>
+          </p>
+          <div class="divider" data-page-node-id="kxBsJFOb4AZnrEY7wd1cgq"></div>
+          <p class="contact-links" data-page-node-id="zuqg494CbEhyhim3VceUzF">
+            <a href="mailto:yangbin_cv@whu.edu.cn" id="email-copy" title="点击复制邮箱" data-page-node-id="tLhsGqvNfDs7ryffJpKw5H">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="qHeoGdbnZ6rA9AltiIjlAO"><rect x="3" y="5" width="18" height="14" rx="2" data-page-node-id="LRrgMcG7tlOvDcIpyJEVxG"/><path d="m3 7 9 6 9-6" data-page-node-id="10nb2IZGcWtytmyRsPcbB2"/></svg>
+              Email
+            </a>
+            <a href="https://github.com/yangbincv" target="_blank" title="GitHub 主页" data-page-node-id="ijNv8W5cvBtqM0OTJZUfNb">
+              <svg viewBox="0 0 24 24" fill="currentColor" data-page-node-id="F2pOmFnxz1es5fzB0E9cGC"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.5 2.7 3.2 1.9.1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.8.1 3.1.8.9 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.8C23.4 5.6 18.3.5 12 .5Z" data-page-node-id="koQLgqLD88afyOc4tagzQ5"/></svg>
+              GitHub
+            </a>
+          </p>
+        </div>
+        <div class="about-photo" data-page-node-id="DCF9SNCAUFU2ISTATjlNpX">
+          <img src="https://avatars.githubusercontent.com/u/29668167?v=4" alt="Bin Yang 头像" data-page-node-id="ATBsKjBNXrITmEKyVMifXp">
+          <div class="caption" data-page-node-id="8QTAOnJPpBhRJb8lb5akol">Bin Yang @ Wuhan University</div>
+        </div>
       </div>
-    </div>
+    </td></tr></tbody></table>
+
+    <table class="section" id="news" style="width:100%;border:0;border-spacing:0" data-page-node-id="AUQxkQ4VKA2uLaCEHX5HDj"><tbody data-page-node-id="K7BHHcZLVt7conWvQMWemS"><tr data-page-node-id="OJGfyMH1Kt2eqzz8i2n8B8"><td data-page-node-id="eUGy6dwAvE2bJeMqqr7c3l">
+      <heading data-page-node-id="qMp9ZTDHgSSGBTRjkCLQXN">📰 News</heading>
+      <ul class="news-list" data-page-node-id="UIxRDjd6lbBx5Em9CrsZwp">
+        <li data-page-node-id="upIJg80qTDFGy6lYsoePAh"><span class="news-date" data-page-node-id="fnWmMOrIPHiKJrMtMnN0dl">2026</span> 8 篇论文被 <span class="news-highlight" data-page-node-id="SsjQcIWEVM51NNt4bmQ6xK">ACM MM 2026（含 Oral）</span>、<span class="news-highlight" data-page-node-id="2bXBzLyY73tz7wdCLHSuaG">ICML 2026</span>、<span class="news-highlight" data-page-node-id="gb1d69VzZ2cBBgteq2fXnL">CVPR 2026（含 Highlight）</span>、<span class="news-highlight" data-page-node-id="7pbNFIISUqyR6TbAZtQck3">AAAI 2026（含 Oral）</span> 接收。</li>
+        <li data-page-node-id="wiCk424O9kZFfHz5O4B8Y4"><span class="news-date" data-page-node-id="DWyDeOoNbUPkH2tkc4WhOj">2025</span> 论文被 <span class="news-highlight" data-page-node-id="mGHTUy4mIEtNREa2sxIyIf">NeurIPS 2025（Spotlight）</span>、<span class="news-highlight" data-page-node-id="MVV3bBG2OXFLN27xarxZVz">ICCV 2025</span>、<span class="news-highlight" data-page-node-id="yqE9YHLPOJ6dRGxtS9j42j">ICML 2025</span>、<span class="news-highlight" data-page-node-id="HHDLVkBu2kpH86NhHqDBD9">AAAI 2025</span> 及 CCF-A 类期刊 <span class="news-highlight" data-page-node-id="EvRKb7HocnrDgx78oqSIAH">IEEE TIFS</span> 接收。</li>
+        <li data-page-node-id="5hNmo3dWHPUGWRDn1VseUw"><span class="news-date" data-page-node-id="qGH5fBxvMbc1fuzrJuwqmt">2025</span> 指导学生获 <span class="news-highlight" data-page-node-id="A4HbfTmHLZpgzwvonIpTmr">PRCV 全模态行人重识别挑战赛一等奖</span>，获评优秀指导老师。</li>
+        <li data-page-node-id="PdohVJakyS8PIDFdy9JdU5"><span class="news-date" data-page-node-id="I5UfBnv3yEL0llMtrhmdWA">2024</span> 入职武汉大学博士后（智能科学与技术），主持多项国家与省部级项目。</li>
+        <li data-page-node-id="t2DGE1r14KIG0ksFVnUimT"><span class="news-date" data-page-node-id="KbRwBAuU41mn9qxrUC2rJK">2024.06</span> 于武汉大学计算机学院获得工学博士学位。</li>
+      </ul>
+    </td></tr></tbody></table>
+
+    <table class="section" id="grants" style="width:100%;border:0;border-spacing:0" data-page-node-id="6W7vdHO5HwCpF7CHDch5jS"><tbody data-page-node-id="eaaiZWTVkYiJe5bCuuPw9T"><tr data-page-node-id="DQv5JHCHunOca4Ofwc23vT"><td data-page-node-id="ZNR0nbfuDqz8NgkL5avIEL">
+      <heading data-page-node-id="xXY3ulFfymqb1BwhDHlfYS">💰 主持项目 (Grants)</heading>
+      <ul class="grant-list" data-page-node-id="LmWtjcfzxBOhZ8xeyWoDAU">
+        <li data-page-node-id="5f7GGwELlCHHw5RaQMlvSz">国家自然科学基金 青年项目（C 类）</li>
+        <li data-page-node-id="VmdpKY5EluBo5TXb3qbYJT">国家科技重大专项 子课题负责人</li>
+        <li data-page-node-id="evIC8UBH98aBCH1jLqm9Jm">博士后创新人才支持计划（博士后特别资助）</li>
+        <li data-page-node-id="EaCtIbaEVrK3zmU5T4DJbw">中国博士后科学基金面上项目</li>
+        <li data-page-node-id="FeNaMgxI83RKm4rKNUxKGA">中国博士后国家资助计划</li>
+        <li data-page-node-id="N3qcwJ0eScSCOhyFb7GQJS">湖北省自然科学基金青年项目（B 类）</li>
+        <li data-page-node-id="830CVj0EnvrmlT1w7RQDY4">湖北省尖端人才计划</li>
+        <li data-page-node-id="DQqZvvFmKpOAx1tLwNGukx">湖北省创新人才项目</li>
+        <li data-page-node-id="kSTivATgwYvOOh2Ph38bCa">武汉大学弘毅博士后计划</li>
+      </ul>
+    </td></tr></tbody></table>
+
+    <table class="section" id="publications" style="width:100%;border:0;border-spacing:0" data-page-node-id="faNvUAFyILAODAnG0irbDq"><tbody data-page-node-id="nMQVGz71DspgNTe43Ji5lt"><tr data-page-node-id="bbCseCW6WYdLTtTK9cMEno"><td data-page-node-id="GJGMxR6Gv3lGNzzSgrTBIz">
+      <heading data-page-node-id="yYx48EexScu99IX10uT6K2">📚 Publications</heading>
+      <p class="pub-note" data-page-node-id="aaEOBXMDJFiBsP491RUovp"><b data-page-node-id="qJ5riDjJPVxb6joEJY8nep">Bin Yang</b> 以 <span class="hl-demo" data-page-node-id="bg9axKwHRJa8d0QU8yS6UQ">黄色底色</span> 标注一作 / 共同一作论文。† 共同一作，* 通信作者，†† 共同通信。</p>
+
+      <div class="tag-filter" id="tagFilter" data-page-node-id="7WoSwEeWMbJRiGWSrJgtQ2">
+        <button class="tag-btn active" data-tag="all" data-page-node-id="ZVXEi1zeoPQMzc6IexAVru">All</button>
+        <button class="tag-btn" data-tag="reid" data-page-node-id="XTkpoPtSkYYd4R4SEh7unw">Re-ID</button>
+        <button class="tag-btn" data-tag="multimodal" data-page-node-id="LPgH4D0JAbyrXBKIr8OOuu">Multimodal</button>
+        <button class="tag-btn" data-tag="medical" data-page-node-id="abBug5lbGArczgqAQ9o8of">Medical</button>
+        <button class="tag-btn" data-tag="localization" data-page-node-id="Mxubi4sMxztAA2d1qflFGL">Geo-Localization</button>
+        <button class="tag-btn" data-tag="detection" data-page-node-id="6r4KfBqndWe7cbC4FMymXF">Detection</button>
+        <button class="tag-btn" data-tag="security" data-page-node-id="qQdr0zCA6aygALUvBOnfph">Security</button>
+      </div>
+
+      <!-- 2026 -->
+      <div class="pub" data-tags="reid,multimodal" data-page-node-id="gZRv9AHXfmXfhISC68jWXw">
+        <div class="pub-title" data-page-node-id="5S5Y4TCI3ygux7FrJD12BD"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="ITIWrQaFPifzY3xBYxHww2">Cross-Resolution Semantic Transfer for Robust Text-to-Image Retrieval in Low-Resolution Surveillance</a></div>
+        <div class="pub-authors" data-page-node-id="zgIjSvdEdYwZbAaiqCHEE4">Wenjie Qian†, <b data-page-node-id="K92lERUWtxWc4vk1VFVlq9">Bin Yang†</b>, Xiao Wang, Wenke Huang, Ling Mei, Xin Xu, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="KnHY2ibcv7jspIIz9ESbb6"><span class="badge award" data-page-node-id="k9rfjbkTpNsPdpAyvOOP4v">ACM MM 2026</span> CCF-A 类会议，<b data-page-node-id="hSrIcVk4etAj1LMpHw0DdR">Oral，共同一作</b></div>
+      </div>
+
+      <div class="pub" data-tags="reid,multimodal" data-page-node-id="ULREvbKTj7HYGLfc9LVeSd">
+        <div class="pub-title" data-page-node-id="YAa0kwwQIDTz4NyMJr24fo"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="ByVfbO4YZuuL56rjLoSGYy">Latent Modality Recovery and Topological Consistency for Robust Missing-Modality Person Re-identification</a></div>
+        <div class="pub-authors" data-page-node-id="27E0s1v3sEkJCyBJs5VQ7X">Tingfeng Wang†, <b data-page-node-id="bYVcbHsHZVaGpR5hFc2Aom">Bin Yang†</b>, Yang Bai, Shuai You, Mang Ye, Kehua Su</div>
+        <div class="pub-venue" data-page-node-id="xdOdMjTy2MdpWLld6Ek6uX"><span class="badge award" data-page-node-id="iajWJkJGZuYq8oTIUF8R7F">ACM MM 2026</span> CCF-A 类会议，共同一作</div>
+      </div>
+
+      <div class="pub" data-tags="medical,multimodal" data-page-node-id="SWTKH7BQ4H1PoKbZg1Nk4W">
+        <div class="pub-title" data-page-node-id="9TJJcSRWPfnCUC3Rexsie2"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="lgsBcWSFONn5lXTtMR9hI4">PASTE-D2Net: Prior-Aware Spatio-Temporal Evolutionary Distillation Dual-Stream Network for Medical Single-Domain Generalization</a></div>
+        <div class="pub-authors" data-page-node-id="PM88DOmB2bEsn9OGjdKC25">Changsheng Zheng, <b data-page-node-id="vEenNTGGD942dVG9egFe29">Bin Yang</b>, Mang Ye, Qingxiong Tan</div>
+        <div class="pub-venue" data-page-node-id="GNgDXw0baRGF3kP49z9tJs"><span class="badge award" data-page-node-id="eKjsz2JUTjsrhQBiE2kLfo">ACM MM 2026</span> CCF-A 类会议，共同一作</div>
+      </div>
+
+      <div class="pub" data-tags="reid" data-page-node-id="hHcG9HAyVZdcbN44SbJ0Wp">
+        <div class="pub-title" data-page-node-id="avdGkIw9R4bKKjeeF3z8U7"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="x60xLcpBGapRoavEp58QlP">Cross-Modal Semantic Decoupling and Transfer for Text-to-Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="EoBQqP6yvfkJsKWVNjoW1d">Ziang Zhang, <b data-page-node-id="wWJqUgG0RAAczW2HrwQfSv">Bin Yang</b>, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="fGwEMFT0ww8y4mISAI4RZq"><span class="badge award" data-page-node-id="1ytRpRUy3VGNgN544uoKCh">ICML 2026</span> CCF-A 类会议，共同一作</div>
+      </div>
+
+      <div class="pub" data-tags="reid,multimodal" data-page-node-id="0QAedf5Sr0DZby6yN7t8x9">
+        <div class="pub-title" data-page-node-id="epzaTF6lZ6PcXX0jo21g0W"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="Zi0Kf78HFfItm5O99NGwT7">WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="3zijfTIFwr22ODBvioNzBc">Yuxuan Zhao, Zhongao Zhou, <b data-page-node-id="yBfXH4BV3wDCkT52afkpTg">Bin Yang</b>, He Li, Jian Liang, Jun Chen, Bo Du††, Mang Ye††</div>
+        <div class="pub-venue" data-page-node-id="aJitrYfKXfWJgBiSEJvF5R"><span class="badge award" data-page-node-id="MFh1FkGtWQVoYoGFaBfee9">CVPR 2026</span> CCF-A 类会议，<b data-page-node-id="pUfQtgS7FlvjfGcyIwQmM0">Highlight，共同通信</b></div>
+      </div>
+
+      <div class="pub" data-tags="reid" data-page-node-id="H7LuxNLp8RPhxS4WBOYEDj">
+        <div class="pub-title" data-page-node-id="zTfsRAfqwThV7FkOreANWB"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="aYHLCGVUTOvgYZIdvkFpuK">Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="P648alFFs3A8PHHJh7Xr8V">Yudi Xie, <b data-page-node-id="ivA3ZLRKFwvJYnFrFGmle8">Bin Yang</b>, Zhongao Zhou, Zhenghan Chen, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="9lyhvO0bc7O22C1VJ3QOsw"><span class="badge award" data-page-node-id="gkU6A0DP9YLmK09ftGMjnz">CVPR 2026</span> CCF-A 类会议，共同一作</div>
+      </div>
+
+      <div class="pub" data-tags="localization" data-page-node-id="mScJ5pbCBx6bmDrkPGt83i">
+        <div class="pub-title" data-page-node-id="qVw00t1dsGwqneTeevx84L"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="jKvXGouWVfoHPNqtP5GcPD">UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization</a></div>
+        <div class="pub-authors" data-page-node-id="Yo1ohAjVqY7eL4zKSFrJD7">Cuiqun Chen, Qi Chen, <b data-page-node-id="eQqXOkSM1PSnCwRipAJsqP">Bin Yang</b>, Xingyi Zhang</div>
+        <div class="pub-venue" data-page-node-id="lxe9QrcLWX9dMOAR0S6AC2"><span class="badge award" data-page-node-id="JoGaGrFevwiexC63nYh8wx">AAAI 2026</span> CCF-A 类会议，<b data-page-node-id="wWBcjVpvIF3NeQRkKWBJZH">Oral，共同通信</b></div>
+      </div>
+
+      <div class="pub" data-tags="detection,multimodal" data-page-node-id="ymbnFhFAngjJ1iikNbxvHN">
+        <div class="pub-title" data-page-node-id="IHRhl1Ot4PUjaYgYtftLDU"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="fckwGaCY0QmQquijdahcY4">Robust Pedestrian Detection with Uncertain Modality</a></div>
+        <div class="pub-authors" data-page-node-id="J7DMBRhYcScyzbfyffKmHe">Qian Bie, Xiao Wang, <b data-page-node-id="mZGzYUc4BEAWEVYYEMuiO4">Bin Yang</b>, Zhixi Yu, Jun Chen, Xin Xu</div>
+        <div class="pub-venue" data-page-node-id="2oukIZOYYKbIPH4jRpexE0"><span class="badge award" data-page-node-id="cHE9FO9RuGVXgZERCfQM80">AAAI 2026</span> CCF-A 类会议，共同通信</div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="pub first-author" data-tags="reid,multimodal" data-page-node-id="72yEO3Jpc8ebqKNEc7Q5Xe">
+        <div class="pub-title" data-page-node-id="5INlwS1rVKEEVXUT6XEfve"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="68WeTNifsTRhTBk6W3QmOa">Mining Cross-Modality Implicit Semantic Association for Unsupervised Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="91WuylYzKJoa8b9qng0ftg"><b data-page-node-id="zfbYFN6o8vj3gqyPjfi8mC">Bin Yang</b>, Lekai Liu, Wenke Huang, Xiao Wang, Bo Du, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="eBJRzuB9bUOeMJrfrm8BB8"><span class="badge journal" data-page-node-id="KgbWlFjwBPYOc60BfHXIlQ">IEEE TIFS 2025</span> CCF-A 类期刊，<b data-page-node-id="ZfdDIxECyDdSdLe1piB6u2">一作</b></div>
+      </div>
+
+      <div class="pub" data-tags="reid,multimodal" data-page-node-id="CLaCrQrSaL8GuhPhvBxEZA">
+        <div class="pub-title" data-page-node-id="mZngHt33KN9HGoam72feNC"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="AzUuWv0CvDyZ38hGR9t3rf">Unbiased Prototype Consistency Learning for Multi-Modal and Multi-Task Object Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="KHMg2tUxUlGpicYRaOK7gi">Zhongao Zhou, <b data-page-node-id="Lt0UMQc1WEfns05zEaBsHm">Bin Yang</b>, Wenke Huang, Jun Chen, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="xsspMApCpZg1k0bFm0sxOF"><span class="badge award" data-page-node-id="XE7iD8DEXdK9gaTpibePBm">NeurIPS 2025</span> CCF-A 类会议，<b data-page-node-id="v2AFg3TdbaEBQPSYvdU3hU">Spotlight，共同一作</b></div>
+      </div>
+
+      <div class="pub" data-tags="reid" data-page-node-id="OboED7R9qjHSVx87bpsDal">
+        <div class="pub-title" data-page-node-id="oVSfTML3MWaGxQZUGJ9IDp"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="MoVW1kuZqacvFq42dYClJ9">Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings</a></div>
+        <div class="pub-authors" data-page-node-id="zjaUmx5K9eKpHegc4fIRbw">Haoyu Yao, <b data-page-node-id="H8W3EppMwGSLnZzICNWzwb">Bin Yang</b>, Wenke Huang, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="nKCeYsJziGEp0GCCGWSsev"><span class="badge award" data-page-node-id="JLC1yQF6VmLLo3ZIXZigBY">ICCV 2025</span> CCF-A 类会议，共同一作</div>
+      </div>
+
+      <div class="pub" data-tags="reid" data-page-node-id="wANivL4tNrRUBF5kAwJb4o">
+        <div class="pub-title" data-page-node-id="bX4BTGWtfUZhGp8MrADMt1"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="KBSvFZE9pHVjyEQFd9xEmN">TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="FFHREeHq2UpeGXOBEBF1wp">Xiao Wang, Lekai Liu, <b data-page-node-id="hA7t2Zu33bop5LH97H4Xnd">Bin Yang</b>, Mang Ye, Zheng Wang, Xin Xu</div>
+        <div class="pub-venue" data-page-node-id="j3gYVIISDn3bpvpCY3SUoG"><span class="badge award" data-page-node-id="gdGC5TtDKdw8D2CxFlYOAD">AAAI 2025</span> CCF-A 类会议，共同通信</div>
+      </div>
+
+      <div class="pub" data-tags="security" data-page-node-id="RKro5q0AuVLDF9CFxUzau2">
+        <div class="pub-title" data-page-node-id="YTVr1fVg7R1ECMhyl14ws3"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="drub3SIqPPq8TbmTD95pJM">SPMC: Self-Purifying Federated Backdoor Defense via Margin Contribution</a></div>
+        <div class="pub-authors" data-page-node-id="CaUlTYyGdx3lkuJeqAwUBF">Wenwen He, Wenke Huang, <b data-page-node-id="GjoJJgYrhW5Baf7ZdJCWLn">Bin Yang</b>, ShuKan Liu, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="jslHhAmqFSJGgwD1DE7yj9"><span class="badge award" data-page-node-id="SGSZwpfd381oy5IENSKsbP">ICML 2025</span> CCF-A 类会议，共同通信</div>
+      </div>
+
+      <div class="pub" data-tags="detection" data-page-node-id="chpHZC0eK4UdYjwCGRnjIc">
+        <div class="pub-title" data-page-node-id="WalmU8q0Nj9GQl8aWikHeI"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="28of4r0yYJguiEtUFcBFIV">Image Deraining via Dual-level Contextual Information Associated Learning for Autonomous Driving</a></div>
+        <div class="pub-authors" data-page-node-id="IGzx9bWjcXxSOi986VFO8w">Xiaofen Wang, <b data-page-node-id="ZaAUqMKY3NXV0hr0FUB5M3">Bin Yang*</b>, Tao Wen, Zhen Han, Zheng Wang</div>
+        <div class="pub-venue" data-page-node-id="FBfTO7IdERVHAzv05j78fo"><span class="badge journal" data-page-node-id="aHCqz2ojSGcqHHqZBkTU0q">KBS 2025</span> SCI 一区期刊，<b data-page-node-id="cDv9TYkTjk75DLbpFj5E7C">通信作者</b></div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="pub" data-tags="reid,multimodal" data-page-node-id="yIn26baDrMPSEusKgr5STv">
+        <div class="pub-title" data-page-node-id="HKB0qGvU9FB4DbILUPt3do"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="5SIJUiHA9Oifq9pibEqtCN">Empowering Visible-Infrared Person Re-Identification with Foundation Models</a></div>
+        <div class="pub-authors" data-page-node-id="Df4Ju5JonnNnuWQn1dhqQb">Zhangyi Hu, <b data-page-node-id="RwklBN0Z0JOlBemeETcZMF">Bin Yang</b>, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="TuA9Do4G5UIsWXNTOxD8Dk"><span class="badge award" data-page-node-id="XokBCnliUOhZqRDRL66Ub3">NeurIPS 2024</span> CCF-A 类会议，共同一作</div>
+      </div>
+
+      <div class="pub first-author" data-tags="reid" data-page-node-id="ocyxtA9vAott99XwCU7M4J">
+        <div class="pub-title" data-page-node-id="qqSqU87lNLiubmu66CwPmC"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="4QDmUJ1181wcINDffVHu7J">Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="IznNqKE1XAIZc1wXxRDlp0"><b data-page-node-id="4UGFMd7Cp7JjDdIYPpWgME">Bin Yang</b>, Jun Chen, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="v6FmB8QOHvr6Lo6YiICAB8"><span class="badge award" data-page-node-id="iIBJGXSBT4DBiJoPR55Bcc">CVPR 2024</span> CCF-A 类会议，<b data-page-node-id="Gkm0J6zv0oSbad4x9osZXn">一作</b></div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="pub first-author" data-tags="reid,multimodal" data-page-node-id="QxmLgmErGJzl1WsfJXbazp">
+        <div class="pub-title" data-page-node-id="61dENGlGmSsGQvFNHgcd8N"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="3MAw3NwaBDqNvGYLniafQ7">Translation, Association and Augmentation: Learning Cross-Modality Re-identification from Single-Modality Annotation</a></div>
+        <div class="pub-authors" data-page-node-id="BOtGazGA8d6Rh9KVOBskBl"><b data-page-node-id="NSbcd2jWKhOZEV4DExHK7N">Bin Yang</b>, Jun Chen, Xianzheng Ma, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="rMSrFL9GJDR1MpjAuRpG52"><span class="badge journal" data-page-node-id="AHC3Tt1U2BQiDAUXJjPks1">IEEE TIP 2023</span> CCF-A 类期刊，<b data-page-node-id="57Uc51ioa9x5jBIYvTvSVi">一作</b></div>
+      </div>
+
+      <div class="pub first-author" data-tags="reid" data-page-node-id="BVwTzB0sNLX21XUHrIEe1T">
+        <div class="pub-title" data-page-node-id="8zdGHQZkWB9sKWR0ElyFFH"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="KSSZZpMfVNz4YU2B6u0OfQ">Dual Consistency-Constrained Learning for Unsupervised Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="HEmxDa2TPeRBBqA0NXptIJ"><b data-page-node-id="YhFF00qQMcaTpD9VN7Lrkx">Bin Yang</b>, Jun Chen, Cuiqun Chen, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="Z7wxWxvqtsg1ADpxj1WpYg"><span class="badge journal" data-page-node-id="ei00iBirnzOzip81xvF1VV">IEEE TIFS 2023</span> CCF-A 类期刊，<b data-page-node-id="hkCK0MEIxWC1yb0PJm44C0">一作</b></div>
+      </div>
+
+      <div class="pub first-author" data-tags="reid" data-page-node-id="HSDUCGdhgytIEECqxY2B7x">
+        <div class="pub-title" data-page-node-id="kYEzVumNiFCs0EqBWHYFKO"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="Py4mGPLo2i1ssViOLHkoKM">Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="fdjsLlh82rVPaPAwI6ihca"><b data-page-node-id="lXxaVrT5Rrh1MCfNOvRoTw">Bin Yang</b>, Jun Chen, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="Itc1HVEcizi8GmU9agOBZX"><span class="badge award" data-page-node-id="kO8XFf5ICnRypTxGUDKN7u">ICCV 2023</span> CCF-A 类会议，<b data-page-node-id="FTEOPT3zu5v6xqhm8D0M9T">一作</b>　<span class="pub-links" data-page-node-id="po76DDGqSVurK4qoaXdwZv"><a href="https://github.com/yangbincv/GUR" target="_blank" data-page-node-id="wsAMbWQxwKYbNGFufNfANy">[Code]</a></span></div>
+      </div>
+
+      <div class="pub first-author" data-tags="reid" data-page-node-id="F4I2T4rEFG6y7cnkVPjyr7">
+        <div class="pub-title" data-page-node-id="ypFfyPs47e3zZLhiIhkZpz"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="6gvs9JPmTteJ29uzJ4C2ZG">Top-K Visual Tokens Transformer: Selecting Tokens for Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="c3gYZ0V95HEECuFAgeJBnA"><b data-page-node-id="8BYxU5kTjAQPCH52d1KKEp">Bin Yang</b>, Jun Chen, Mang Ye</div>
+        <div class="pub-venue" data-page-node-id="9mpzdk1KIC0tFDwB0rLK5x"><span class="badge" data-page-node-id="FhmGbUGPXaDvgCGxZMWgrw">ICASSP 2023</span> CCF-B 类会议，<b data-page-node-id="a1kcdISduDrAETeyi9g2E6">Oral，一作</b></div>
+      </div>
+
+      <!-- 2022 -->
+      <div class="pub first-author" data-tags="reid" data-page-node-id="TpCOeJyFtVUbwCLj3uqkRB">
+        <div class="pub-title" data-page-node-id="bETECJ7PEVDWcEMBLOVs1r"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="dKa0wnFxe7EVs64Asltnw5">Augmented Dual-Contrastive Aggregation Learning for Unsupervised Visible-Infrared Person Re-Identification</a></div>
+        <div class="pub-authors" data-page-node-id="QsucZXn09M3Dvgqd0al27D"><b data-page-node-id="FkM9GgufYfEKRu8VAKrXy0">Bin Yang</b>, Mang Ye, Jun Chen, Zesen Wu</div>
+        <div class="pub-venue" data-page-node-id="T0FsERBDEcqFImzSs9FLPQ"><span class="badge award" data-page-node-id="JBHzjcJqjP0a5GehUEVLCV">ACM MM 2022</span> CCF-A 类会议，<b data-page-node-id="9HJpmWGeebhggjKxFb3HGn">一作</b>　<span class="pub-links" data-page-node-id="vnZIhTB2QnytlpaRuToi1u"><a href="https://github.com/yangbincv/ADCA" target="_blank" data-page-node-id="v1e1f8SpGq8WvOjgAqIgrT">[Code]</a></span></div>
+      </div>
+
+      <div class="pub" data-tags="detection" data-page-node-id="Fneppv8nOoshxaMbVOre4o">
+        <div class="pub-title" data-page-node-id="RHaN3W0f5JSviTfo07T9BL"><a href="https://github.com/yangbincv" target="_blank" data-page-node-id="XxugamOjqq8LNJ3NGZXZTT">REMOTE: Reinforced Motion Transformation Network for Semi-supervised 2D Pose Estimation in Videos</a></div>
+        <div class="pub-authors" data-page-node-id="DV0mJPsLe9ddxUv8lh5jjB">Xianzheng Ma, Hossein Rahmani, Zhipeng Fan, <b data-page-node-id="V8PsssIEGnbDaAor2JczyK">Bin Yang</b>, Bin Yang, Jun Chen, Jun Liu</div>
+        <div class="pub-venue" data-page-node-id="IVReK4BqxhIbU55g3RsHtG"><span class="badge award" data-page-node-id="EMbbhxUU1eqFzs3vriPlg0">AAAI 2022</span> CCF-A 类会议</div>
+      </div>
+
+    </td></tr></tbody></table>
+
+    <table class="section" id="experience" style="width:100%;border:0;border-spacing:0" data-page-node-id="qRMGCN75Or0hwUTHlb1Thq"><tbody data-page-node-id="nAfo4fcNA4LyEjKI26yMgJ"><tr data-page-node-id="TREynleFtrco3UKpuBgry6"><td data-page-node-id="PgWCaTetC0uP1IvogOKPDO">
+      <heading data-page-node-id="EwZYr6aWWJZHXniit84INQ">🎓 Experience</heading>
+      <div class="exp-item" data-page-node-id="yz3GbLm1iXzF4260N9qGIb">
+        <div class="exp-badge" data-page-node-id="5ufU291oBDKcVUCM2auF1W">2024.08 – 至今</div>
+        <div class="exp-body" data-page-node-id="NCPjHMeGgDp4axe43s7jle">
+          <b data-page-node-id="0NsQrXCBCB52ZJsEzJciZh">博士后 · 武汉大学 · 智能科学与技术</b>
+          <div class="exp-meta" data-page-node-id="NUIZEPddkJdHBxSsLSVJZe">与 Mang Ye（叶茫）教授团队合作，研究方向：多模态目标重识别、多模态医疗、社会模拟</div>
+        </div>
+      </div>
+      <div class="exp-item" data-page-node-id="0fIwguvY96zTK0yuD2Ks8E">
+        <div class="exp-badge" data-page-node-id="htf9FAOOKCFxAJM0gAHGza">2020.09 – 2024.06</div>
+        <div class="exp-body" data-page-node-id="otQoD9K7VF8Gx2rF3LLq99">
+          <b data-page-node-id="HVH7RBAiwEUGw5Mdzj9HCW">博士 · 武汉大学计算机学院 · 计算机科学与技术</b>
+          <div class="exp-meta" data-page-node-id="GJRTSTeLOIQ9SePdVjaApW">研究主题：无监督可见光-红外跨模态行人重识别</div>
+        </div>
+      </div>
+    </td></tr></tbody></table>
+
+    <table class="section" id="projects" style="width:100%;border:0;border-spacing:0" data-page-node-id="O676KEpZwmiuG3x7YiB7Bw"><tbody data-page-node-id="7DzyTolyBQgIMjWDKbDzwB"><tr data-page-node-id="hySSsASgIX2LgdlLmfN7jg"><td data-page-node-id="MdY2ye5BF5bDbUTWMYmKrb">
+      <heading data-page-node-id="tCtbemZ2Ag2A6AArd5ggbL">🚀 Open Source Projects</heading>
+      <p class="pub-note" data-page-node-id="Jo7dP2on6TW4DxfsYN8nLb">Build in Open. Grow Together. （星标数来自 GitHub 实时统计，点击可跳转仓库）</p>
+      <div id="tagcloud-container" data-page-node-id="R8DynBPm5BLuavVTRTjBjq"></div>
+    </td></tr></tbody></table>
+
+    <table class="section" id="service" style="width:100%;border:0;border-spacing:0" data-page-node-id="yEDfcUTpaEXlNW49VPfoy1"><tbody data-page-node-id="ePAQr9AO3VA6e4tkEEVdRQ"><tr data-page-node-id="6DAMtD0EdC7ZDQyrLjynO1"><td data-page-node-id="n4TlyijALC2QONSM8wkFJp">
+      <heading data-page-node-id="1T9kuDH80ZXVVbrUnjTULS">🛠 学术服务 (Service)</heading>
+      <ul class="plain-list" data-page-node-id="3Gqh6giuKdiSC1iTm5jUXF">
+        <li data-page-node-id="kx6As0o0TmxBoMAp5FwYhy"><b data-page-node-id="TCCKbadpoCg9FkdU3bjTUP">CCF-A 类国际顶级会议 PC Member：</b>CVPR、ICCV、NeurIPS、ICML、AAAI、ACM MM 等</li>
+        <li data-page-node-id="IFmYZXcLp04cNtLIX5Z2mc"><b data-page-node-id="6A9PAD71U1RYUrfjPYJzfn">CCF-A 类国际顶级期刊审稿人：</b>TPAMI、TIP、TMM、IJCV 等</li>
+        <li data-page-node-id="6y7xSDnFQjbMQaLRI5FH9B"><b data-page-node-id="6i5bCcqv5IOOIMChgrfGNu">CCF-A 类国际顶级会议杰出审稿人：</b>CVPR、ACM MM</li>
+      </ul>
+    </td></tr></tbody></table>
+
+    <table class="section" id="awards" style="width:100%;border:0;border-spacing:0" data-page-node-id="LdKiyDMa1f07tj3rfWnUHr"><tbody data-page-node-id="fPs1cRb8wNWcN3JB4L0tPR"><tr data-page-node-id="dgFALAr69PF7uQygEeOGcg"><td data-page-node-id="AfVkWZbd4yBlEQa6boFZiF">
+      <heading data-page-node-id="h349oJGxog393tCIgdDKPh">🏆 荣誉奖项 (Awards)</heading>
+      <ul class="plain-list" data-page-node-id="LEACdbvuwFBGdDZYtLik4L">
+        <li data-page-node-id="imERBY7rabEZBAOGvmr06M">2025：PRCV 全模态行人重识别挑战赛一等奖（优秀指导老师）</li>
+        <li data-page-node-id="daatqD0CIuVZXQHtXvPlwL">CVPR、ACM MM 杰出审稿人（Outstanding Reviewer）</li>
+        <li data-page-node-id="iWBvwuFy8oq2AzlADQNw7O">武汉大学弘毅博士后计划入选者</li>
+      </ul>
+    </td></tr></tbody></table>
+
+  </div>
+
+  <section class="footer" aria-label="页脚" data-page-node-id="M5g4BQMkakiT1AaVrPA9yt">
+    <h2 data-page-node-id="tEX2BfWz1me1if6rubWhfJ">Keep Exploring</h2>
+    <p class="sub" data-page-node-id="pAbIfwwuf0DNVfGyOZCHJA">Do what matters, even when it's hard.</p>
+    <a href="mailto:yangbin_cv@whu.edu.cn" class="cta" data-page-node-id="LVtIY496NeRX1djgTur5pm">✉ Get in Touch</a>
+    <p class="footnote" data-page-node-id="IB8iaMelfEJbgqH63g0Ozs">Bin Yang · 武汉大学 · Last updated: Sep. 2026</p>
   </section>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" onclick="scrollToTop()" title="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"/>
-    </svg>
+  <button id="backToTop" title="回到顶部" data-page-node-id="Ug0wAah2bZYFASQ2oF56GC">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="xB5knh84Da85KI9fEtcL02"><polyline points="18 15 12 9 6 15" data-page-node-id="k4sY2233AfaPJJjV8dNLzY"/></svg>
   </button>
-
-  <div id="toast" class="toast-message">✅复制完成</div>
+  <div id="toast" class="toast-message" data-page-node-id="3OwWBMCDZo9zUimedP3Moj">✅ 复制完成</div>
 
   <script>
-    // Back to Top
-    (function() {
-      var btn = document.getElementById('backToTop');
-      var sectionNav = document.querySelector('.section-drip-nav');
-      var footer = document.querySelector('.mountain-footer');
-
-      function updateSectionNav() {
-        if (!sectionNav || !footer) return;
-        var footerTop = footer.getBoundingClientRect().top;
-        var navBottom = sectionNav.getBoundingClientRect().bottom;
-        sectionNav.classList.toggle('is-footer-visible', footerTop < navBottom + 28);
-      }
-
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-          btn.classList.add('visible');
-        } else {
-          btn.classList.remove('visible');
-        }
-        updateSectionNav();
+    // ---------- 复制功能 ----------
+    function copyText(text, event) {
+      var done = function() {
+        var toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(function(){ toast.classList.remove('show'); }, 2000);
+      };
+      navigator.clipboard.writeText(text).then(done).catch(function(){
+        var ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) {}
+        document.body.removeChild(ta);
       });
-      window.addEventListener('resize', updateSectionNav);
-      updateSectionNav();
+    }
+    document.getElementById('email-copy').addEventListener('click', function(e){
+      e.preventDefault(); copyText('yangbin_cv@whu.edu.cn', e);
+    });
+    document.getElementById('astronaut-btn').addEventListener('click', function(e){
+      copyText('杨斌（Bin Yang），武汉大学博士后，研究方向：多模态目标重识别、多模态医疗、社会模拟。邮箱：yangbin_cv@whu.edu.cn，GitHub：https://github.com/yangbincv', e);
+    });
+
+    // ---------- 论文标签筛选 ----------
+    document.addEventListener('DOMContentLoaded', function(){
+      var pubs = document.querySelectorAll('.pub[data-tags]');
+      document.querySelectorAll('.tag-btn').forEach(function(btn){
+        var tag = btn.dataset.tag;
+        var count = tag === 'all' ? pubs.length :
+          Array.from(pubs).filter(function(p){ return p.dataset.tags.split(',').includes(tag); }).length;
+        btn.insertAdjacentHTML('beforeend', '<span class="tag-count">' + count + '</span>');
+      });
+    });
+    document.getElementById('tagFilter').addEventListener('click', function(e){
+      var btn = e.target.closest('.tag-btn');
+      if (!btn) return;
+      document.querySelectorAll('.tag-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var tag = btn.dataset.tag;
+      document.querySelectorAll('.pub[data-tags]').forEach(function(p){
+        p.style.display = (tag === 'all' || p.dataset.tags.split(',').includes(tag)) ? '' : 'none';
+      });
+    });
+
+    // ---------- 项目星云图 ----------
+    (function(){
+      var container = document.getElementById('tagcloud-container');
+      var myProjects = [
+        { name: "ADCA (ACM MM 2022)", html_url: "https://github.com/yangbincv/ADCA", stargazers_count: 59 },
+        { name: "SDCL (CVPR 2024)",   html_url: "https://github.com/yangbincv/SDCL", stargazers_count: 36 },
+        { name: "GUR (ICCV 2023)",    html_url: "https://github.com/yangbincv/GUR",  stargazers_count: 20 },
+        { name: "DCCL (TIFS 2023)",   html_url: "https://github.com/yangbincv/DCCL", stargazers_count: 7 },
+        { name: "VI-ReID",            html_url: "https://github.com/yangbincv/VI-ReID", stargazers_count: 0 },
+        { name: "ai-for-grant-writing", html_url: "https://github.com/yangbincv/ai-for-grant-writing", stargazers_count: 0 }
+      ];
+      var tags = [];
+      var r = Math.min(container.offsetWidth, container.offsetHeight) / 2 * 0.8;
+      var stretchX = 1.6;
+      myProjects.forEach(function(p){
+        var el = document.createElement('a');
+        el.href = p.html_url; el.target = '_blank'; el.className = 'tagcloud-item';
+        el.innerHTML = p.name + ' <span style="font-size:0.8em;opacity:.75">🌟' + p.stargazers_count + '</span>';
+        container.appendChild(el);
+        tags.push({ el: el, x: 0, y: 0, z: 0 });
+      });
+      var angleX = 0.002, angleY = 0.002, isHovering = false, animationId = null, isVisible = true;
+      var cx = container.offsetWidth / 2, cy = container.offsetHeight / 2;
+      var len = tags.length;
+      for (var i = 0; i < len; i++) {
+        var phi = Math.acos(-1 + (2 * i + 1) / len);
+        var theta = Math.sqrt(len * Math.PI) * phi;
+        tags[i].x = r * Math.cos(theta) * Math.sin(phi);
+        tags[i].y = r * Math.sin(theta) * Math.sin(phi);
+        tags[i].z = r * Math.cos(phi);
+      }
+      function rotate() {
+        animationId = null;
+        if (!isVisible) return;
+        if (!isHovering) {
+          var cosX = Math.cos(angleX), sinX = Math.sin(angleX);
+          var cosY = Math.cos(angleY), sinY = Math.sin(angleY);
+          tags.forEach(function(t){
+            var y = t.y * cosX - t.z * sinX, z = t.z * cosX + t.y * sinX;
+            t.y = y; t.z = z;
+            var x = t.x * cosY - t.z * sinY;
+            z = t.z * cosY + t.x * sinY;
+            t.x = x; t.z = z;
+          });
+        }
+        tags.forEach(function(t){
+          var perspective = 2 * r;
+          var scale = perspective / (perspective - t.z);
+          var alpha = (t.z + r) / (2 * r);
+          t.el.style.left = (cx + t.x * stretchX) - t.el.offsetWidth / 2 + 'px';
+          t.el.style.top = (cy + t.y) - t.el.offsetHeight / 2 + 'px';
+          t.el.style.transform = 'scale(' + scale + ')';
+          t.el.style.opacity = Math.max(0.2, alpha);
+          t.el.style.zIndex = Math.round(scale * 100);
+        });
+        animationId = requestAnimationFrame(rotate);
+      }
+      function setVisible(v) {
+        isVisible = v;
+        if (v && animationId === null) animationId = requestAnimationFrame(rotate);
+      }
+      container.addEventListener('mouseenter', function(){ isHovering = true; });
+      container.addEventListener('mouseleave', function(){ isHovering = false; });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries){
+          setVisible(entries[0].isIntersecting);
+        }, { rootMargin: '120px' }).observe(container);
+      }
+      setVisible(true);
     })();
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    // ---------- 回到顶部 ----------
+    (function(){
+      var btn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 300);
+      });
+      btn.addEventListener('click', function(){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
   </script>
 </body>
 </html>
